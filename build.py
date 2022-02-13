@@ -2,9 +2,20 @@ from unittest import loader
 if __name__ != '__main__':
     exit(1)
 
-from pathlib import Path
+from typing import Tuple
 
 from jinja2 import Environment, FileSystemLoader
+
+def extract_name_and_ext(filename: str) -> Tuple[str, str]:
+    ext = ''
+    for char in filename[::-1]:
+        if char == '.':
+            if not ext:
+                break
+            ext = ext[::-1]
+            return filename[:-len(ext)-1], ext
+        ext += char
+    return filename, ''
 
 jinja_env = Environment(loader=FileSystemLoader("."), trim_blocks=True, lstrip_blocks=True)
 
@@ -22,7 +33,7 @@ licenses = {
 }
 
 index_template = jinja_env.get_template("index.jinja")
-index_page = index_template.render(licenses=licenses)
+index_page = index_template.render(**globals())
 
 with open('index.html', "w", encoding='utf-8') as f:
     f.write(index_page)

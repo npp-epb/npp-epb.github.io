@@ -208,10 +208,11 @@
         </div>
         <div class="licenses">
             {% for filename, description in licenses.items() %}
+            {% set name, ext = extract_name_and_ext(filename) %}
             <div>
                 <div class="license-img">
                     <a href="static/license/orig/{{ filename }}"><img
-                            src="static/license/preview/{{ filename[:-4] }}-preview.{{ filename[-3:] }}" /></a>
+                            src="static/license/preview/{{ name }}-preview.{{ ext }}" /></a>
                 </div>
                 <div class="license-description">{{ description }}</div>
             </div>

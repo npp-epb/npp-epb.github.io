@@ -11,8 +11,7 @@ def extract_name_and_ext(filename: str) -> Tuple[str, str]:
         if char == '.':
             if not ext:
                 break
-            ext = ext[::-1]
-            return filename[:-len(ext)-1], ext
+            return filename[:-len(ext)-1], ext[::-1]
         ext += char
     return filename, ''
 

@@ -12,6 +12,7 @@
             padding: 0;
             width: 95vw;
             margin: auto;
+            color: #141a20;
             font-family: Tahoma, Verdana, Arial, Helvetica;
             overflow-x: hidden;
         }
@@ -74,11 +75,17 @@
 
         .heading {
             text-align: center;
-            font-size: 24px;
+            font-size: 18pt;
             border-top: 1px solid #e0e0e0;
             border-bottom: 1px solid #e0e0e0;
             margin-top: 60px;
             padding: 29px 0px;
+        }
+
+        .heading-2 {
+            color: #141a20;
+            font-size: 26pt;
+            padding: 30px 0px;
         }
 
         .text-nowrap {
@@ -91,7 +98,34 @@
 
         .footer {
             border-top: 1px solid #e0e0e0;
+            margin-top: 30px;
             padding: 30px 0 30px 0;
+        }
+
+        .licenses {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+        }
+
+        .licenses>div {
+            width: 395px;
+            padding: 20px;
+            margin: 10px 20px 10px 0;
+            text-align: center;
+            background: #fbfbfc;
+            box-shadow: 5px 5px #f6f7fa;
+            transition: 0.3s;
+        }
+
+        .license-img {
+            width: 180px;
+            margin: auto;
+        }
+
+        .license-img a,
+        .license-img a img {
+            width: inherit;
         }
 
         @media (max-width: 1100px) {
@@ -112,7 +146,6 @@
             .epb-logo-img {
                 width: 50vw;
                 max-width: 400px;
-
             }
 
             .epb-logo {
@@ -122,6 +155,10 @@
 
             .heading {
                 margin-top: 30px;
+            }
+
+            .heading-2 {
+                text-align: center;
             }
 
             .footer {
@@ -156,13 +193,112 @@
 
     <section>
         <div class="aqua heading">ЗАО НПП «ЭПБ» - ЭКСПЕРТ ПО БЕЗОПАСНОСТИ</div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <p>ЗАО НПП «ЭПБ» имеет все необходимые лицензии и обладает большим опытом в области защиты конфиденциальной
+            информации, в том числе персональных данных и аттестации информационных систем персональных данных по
+            требованиям безопасности информации и оказывает полный спектр услуг по данному направлению с соблюдением
+            всех требований нормативных правовых документов ФСБ и ФСТЭК России.</p>
+        <p>Для реализации проектов по обеспечению безопасности в информационных системах персональных данных наша
+            компания предлагает организационные и программно-технические решения.</p>
+        <div class="heading-2">
+            Лицензии
+        </div>
+        <div class="licenses">
+            <div>
+                <div class="license-img">
+                    <a href="static/license/orig/2013-06-13-lic-fsb-crypto.jpg"><img
+                            src="static/license/preview/2013-06-13-lic-fsb-crypto-preview.jpg" /></a>
+                </div>
+                <div class="license-description">
+                    Лицензия ФСБ России № 12947 H от 13 июня 2013 г.
+                </div>
+            </div>
+            <div>
+                <div class="license-img">
+                    <a href="static/license/orig/lic tzki.jpg"><img
+                            src="static/license/preview/lic tzki-preview.jpg" /></a>
+                </div>
+                <div class="license-description">
+                    Лицензия ФСТЭК №2061 от 12 августа 2013 г. на деятельность по технической защите конфиденциальной
+                    информации
+                </div class="license-img">
+            </div>
+            <div>
+                <div class="license-img">
+                    <a href="static/license/orig/lic-fstec-sczi.jpg"><img
+                            src="static/license/preview/lic-fstec-sczi-preview.jpg" /></a>
+                </div>
+                <div class="license-description">
+                    Лицензия ФСТЭК №1783 от 18 июля 2017 г. на деятельность по разработке и производству средств защиты
+                    конфиденциальной информации
+                </div>
+            </div>
+            <div>
+                <div class="license-img">
+                    <a href="static/license/orig/gostaina.jpg"><img
+                            src="static/license/preview/gostaina-preview.jpg" /></a>
+                </div>
+                <div class="license-description">
+                    Лицензия УФСБ России №32358 от 19 октября 2018 г. на осуществление работ, связанных с использованием
+                    сведений, составляющих государственную тайну.
+                </div>
+            </div>
+            <div>
+                <div class="license-img">
+                    <a href="static/license/orig/attestat acreditacii fstek.jpg"><img
+                            src="static/license/preview/attestat acreditacii fstek-preview.jpg" /></a>
+                </div>
+                <div class="license-description">
+                    Аттестат аккредитации органа по аккредитации № СЗИ RU.3505.B013.666 от 13 февраля 2019
+                </div>
+            </div>
+            <div>
+                <div class="license-img">
+                    <a href="static/license/orig/lic_fstec_gt.jpg"><img
+                            src="static/license/preview/lic_fstec_gt-preview.jpg" /></a>
+                </div>
+                <div class="license-description">
+                    Лицензия ФСТЭК России №3505 от 18 января 2019 г. на осуществление мероприятий и (или) оказание услуг
+                    в области защиты государственной тайны (в части технической защиты информации).
+                </div>
+            </div>
+            <div>
+                <div class="license-img">
+                    <a href="static/license/orig/lic-fstec-szi.jpg"><img
+                            src="static/license/preview/lic-fstec-szi-preview.jpg" /></a>
+                </div>
+                <div class="license-description">
+                    Лицензия ФСТЭК России №3506 от 18 января 2019 г. на проведение работ, связанных с созданием средств
+                    защиты информации.
+                </div>
+            </div>
+            <div>
+                <div class="license-img">
+                    <a href="static/license/orig/ISO 9001-2015 1.jpg"><img
+                            src="static/license/preview/ISO 9001-2015 1-preview.jpg" /></a>
+                </div>
+                <div class="license-description">
+                    Сертификат соответствия ГОСТ ISO 9001-2015.
+                </div>
+            </div>
+            <div>
+                <div class="license-img">
+                    <a href="static/license/orig/ISO 9001-2015 2.jpg"><img
+                            src="static/license/preview/ISO 9001-2015 2-preview.jpg" /></a>
+                </div>
+                <div class="license-description">
+                    Сертификат соответствия ГОСТ ISO 9001-2015. Область сертификации системы менеджмента качества.
+                </div>
+            </div>
+            <div>
+                <div class="license-img">
+                    <a href="static/license/orig/attestat-akreditaci.jpg"><img
+                            src="static/license/preview/attestat-akreditaci-preview.jpg" /></a>
+                </div>
+                <div class="license-description">
+                    Аттестат аккредитации испытательной лаборатории от 8 февраля 2021 года.
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="footer">

@@ -44,12 +44,8 @@
             color: #676767;
         }
 
-        .navbar-links>div {
-            margin-right: 75px;
-        }
-
-        .contact-link {
-            margin-right: inherit;
+        .navbar-links {
+            column-gap: 75px;
         }
 
         .epb-logo {
@@ -68,9 +64,6 @@
 
         .contact {
             display: block;
-        }
-
-        .contact-line-height {
             line-height: 23px;
         }
 
@@ -132,10 +125,6 @@
             .contact {
                 display: none;
             }
-
-            .contact-link {
-                margin: 0 !important;
-            }
         }
 
         @media (max-width: 858px) {
@@ -181,8 +170,8 @@
                 <div><a href="#solutions">Решения</a></div>
                 <div><a href="#partners">Партнеры</a></div>
                 <div><a href="#clients">Клиенты</a></div>
-                <div class="contact-link"><a href="#contact">Контакты</a></div>
-                <div class="contact text-align-right contact-line-height" style="margin: 0;">
+                <div><a href="#contact">Контакты</a></div>
+                <div class="contact text-align-right">
                     <span>Обратная связь:</span>
                     <br>
                     <span class="aqua">

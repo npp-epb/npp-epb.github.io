@@ -2,7 +2,7 @@
 
 ## Install Jinja2
 
-    pip3 install -r requirements.txt
+    pip3 install Jinja2
 
 ## Build
 

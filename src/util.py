@@ -79,6 +79,9 @@ def minify_css(css_path: str) -> str:
             if cur_char == '*' and next_char == '/':
                 inside_comment = False
                 i += 2
+                while i < css_len and backslash_n_or_space(css[i]):
+                    i += 1
+                continue
 
             if inside_comment:
                 i += 1

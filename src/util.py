@@ -15,6 +15,7 @@ def minify_css(css_path: str) -> str:
     css_len = len(css)
     min_css = ''
     inside_comment = False
+    inside_block = False
     i = 0
     try:
         while i < css_len:
@@ -30,8 +31,20 @@ def minify_css(css_path: str) -> str:
 
             cur_char = css[i]
 
-            if backslash_n_or_space(cur_char):
+            if backslash_n(cur_char):
                 i += 1
+                continue
+
+            if inside_block and space(cur_char):
+                i += 1
+                continue
+
+            if cur_char == '{' or cur_char == '}':
+                inside_block = cur_char == '{'
+                min_css += cur_char
+                i += 1
+                while i < css_len and backslash_n_or_space(css[i]):
+                    i += 1
                 continue
 
             if cur_char == '@':
@@ -39,8 +52,11 @@ def minify_css(css_path: str) -> str:
                     if not backslash_n_or_space(css[i]):
                         min_css += css[i]
                     i += 1
+                inside_block = False
                 min_css += css[i]
                 i += 1
+                while i < css_len and backslash_n_or_space(css[i]):
+                    i += 1
                 continue
 
             if i + 1 == css_len:
@@ -48,6 +64,12 @@ def minify_css(css_path: str) -> str:
                 break
 
             next_char = css[i+1]
+
+            if not inside_block and cur_char == ' ' and next_char == '{':
+                inside_block = True
+                min_css += '{'
+                i += 2
+                continue
 
             if cur_char == '/' and next_char == '*':
                 inside_comment = True
@@ -62,13 +84,15 @@ def minify_css(css_path: str) -> str:
                 i += 1
                 continue
 
-            if cur_char == ':' and next_char == ' ':
-                min_css += ':'
+            if inside_block and cur_char == ':' and next_char == ' ':
+                min_css += cur_char
                 i += 2
                 while css[i] != ';' and css[i] != '}':
                     if not backslash_n(css[i]):
                         min_css += css[i]
                     i += 1
+                if css[i] == '}':
+                    inside_block = False
                 min_css += css[i]
                 i += 1
                 continue

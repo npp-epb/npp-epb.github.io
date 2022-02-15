@@ -1,15 +1,3 @@
-from typing import Tuple
-
-def extract_name_and_ext(filename: str) -> Tuple[str, str]:
-    ext = ''
-    for char in filename[::-1]:
-        if char == '.':
-            if not ext:
-                break
-            return filename[:-len(ext)-1], ext[::-1]
-        ext += char
-    return filename, ''
-
 licenses = {
     "2013-06-13-lic-fsb-crypto.jpg" : "Лицензия ФСБ России № 12947 H от 13 июня 2013 г.",
     "lic tzki.jpg"                  : "Лицензия ФСТЭК №2061 от 12 августа 2013 г. на деятельность по технической защите конфиденциальной информации",

@@ -49,10 +49,28 @@
             {% set name, ext = extract_name_and_ext(filename) %}
             <div>
                 <div class="license-img">
-                    <a href="static/i/license/orig/{{ filename }}"><img
+                    <a target="_blank" href="static/i/license/orig/{{ filename }}"><img
                             src="static/i/license/preview/{{ name }}-preview.{{ ext }}" /></a>
                 </div>
                 <div class="license-description">{{ description }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section>
+        <div class="heading-2">
+            Наши Заказчики
+        </div>
+        <div class="clients">
+            {% for filename, description, link in clients %}
+            <div>
+                <a target="_blank" href="{{ link }}">
+                    <div class="client-img">
+                        <img src="static/i/client/{{ filename }}" />
+                    </div>
+                    <div class="client-description">{{ description }}</div>
+                </a>
             </div>
             {% endfor %}
         </div>

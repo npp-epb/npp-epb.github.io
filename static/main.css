@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    width: 90vw;
+    width: 75vw;
     margin: auto;
     color: #141a20;
     font-family: Tahoma, Verdana, Arial, Helvetica;
@@ -89,8 +89,8 @@ a:active {
 }
 
 .licenses>div {
-    width: 395px;
-    padding: 20px;
+    width: 240px;
+    padding: 15px;
     text-align: center;
     background: #fbfbfc;
     box-shadow: 5px 5px #f6f7fa;
@@ -104,7 +104,7 @@ a:active {
 .clients {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -160,9 +160,17 @@ a:active {
     padding: 30px 0 30px 0;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
+    body {
+        width: 90vw;
+    }
+
     .contact {
         display: none;
+    }
+
+    .licenses>div {
+        width: 185px;
     }
 }
 
@@ -183,10 +191,6 @@ a:active {
 
     .heading {
         margin-top: 30px;
-    }
-
-    .clients {
-        justify-content: center;
     }
 
     .clients>div {

@@ -112,7 +112,7 @@ a:active {
     width: 100px;
     height: 100px;
     padding: 10px;
-    background: #fbfbfc;
+    background: #fff;
     position: relative;
     box-shadow: 5px 5px #f6f7fa;
 }
@@ -128,15 +128,29 @@ a:active {
     word-break: break-word;
     opacity: 0;
     transition: opacity 125ms ease-out;
-    background: rgba(246, 247, 250, 0.5);
+    background: rgba(246, 247, 250, 0.7);
 }
 
 .clients>div:hover .client-description {
     opacity: 1;
 }
 
-.client-img img {
+.client-img {
     width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.client-img img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin: auto;
 }
 

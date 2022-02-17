@@ -128,7 +128,7 @@ a:active {
     word-break: break-word;
     opacity: 0;
     transition: opacity 125ms ease-out;
-    background: rgba(246, 247, 250, 0.7);
+    background: rgba(246, 247, 250, 0.77);
 }
 
 .clients>div:hover .client-description {

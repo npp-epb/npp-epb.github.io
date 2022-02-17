@@ -191,6 +191,7 @@ a:active {
 
     .clients>div {
         padding: 5px;
+        pointer-events: none;
     }
 
     .client-description {

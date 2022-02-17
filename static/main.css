@@ -191,7 +191,10 @@ a:active {
 
     .clients>div {
         padding: 5px;
-        pointer-events: none;
+    }
+
+    .clients>div:hover .client-description {
+        opacity: 0;
     }
 
     .client-description {

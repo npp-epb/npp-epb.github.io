@@ -49,7 +49,7 @@ def minify_css(css_path: str) -> str:
 
             if cur_char == '@':
                 while i < css_len and css[i] != '{':
-                    if not backslash_n_or_space(css[i]):
+                    if not backslash_n(css[i]):
                         min_css += css[i]
                     i += 1
                 inside_block = False

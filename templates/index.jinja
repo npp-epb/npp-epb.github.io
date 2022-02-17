@@ -50,7 +50,7 @@
             <div>
                 <div class="license-img">
                     <a target="_blank" href="static/i/license/orig/{{ filename }}"><img
-                            src="static/i/license/preview/{{ name }}-preview.{{ ext }}" /></a>
+                            src="static/i/license/preview/{{ name }}-preview.{{ ext }}"/></a>
                 </div>
                 <div class="license-description">{{ description }}</div>
             </div>
@@ -63,16 +63,34 @@
             Наши Клиенты
         </div>
         <div class="clients">
-            {% for filename, description, link in clients %}
+            {% for filename, description, link in clients[:16] %}
             <div>
                 <a target="_blank" href="{{ link }}">
                     <div class="client-img">
-                        <img src="static/i/client/{{ filename }}" />
+                        <img src="static/i/client/{{ filename }}"/>
                     </div>
                     <div class="client-description">{{ description }}</div>
                 </a>
             </div>
             {% endfor %}
+        </div>
+        <div style="margin-top: 10px;" class="expand-clients">
+            <input id="expand-clients-checkbox" type="checkbox"/>
+            <div class="expand-clients-content">
+                <div class="clients">
+                    {% for filename, description, link in clients[16:] %}
+                    <div>
+                        <a target="_blank" href="{{ link }}">
+                            <div class="client-img">
+                                <img src="static/i/client/{{ filename }}"/>
+                            </div>
+                            <div class="client-description">{{ description }}</div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <label class="expand-clients-label" for="expand-clients-checkbox"><div class="triangle-down"></div></label>
         </div>
     </section>
 

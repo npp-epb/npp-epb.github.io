@@ -49,7 +49,7 @@ clients = [
     ('Моревиль.png', 'Моревиль', 'http://www.moreville.ru/'),
     ('МПО Классика.png', 'МПО Классика', 'https://www.classics.ru/'),
     ('НК Банк.png', 'НК Банк', 'https://www.nkbank.ru/'),
-    ('НПП АЛИМП.png', 'НПП АЛИМП', 'https://www.alimp.org/'),
+    ('НПП Алимп.png', 'НПП АЛИМП', 'https://www.alimp.org/'),
     ('НРА.png', 'НРА', 'https://www.ra-national.ru/'),
     ('ООО «Мэйл.Ру Цифровые Технологии».png', 'Мэйл.Ру Цифровые Технологии', 'https://tech.mail.ru/'),
     ('ООО АРЕАЛ-98.jpeg', 'ООО АРЕАЛ-98', 'https://www.areal98.ru/'),

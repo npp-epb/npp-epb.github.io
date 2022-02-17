@@ -189,6 +189,15 @@ a:active {
         justify-content: center;
     }
 
+    .clients>div {
+        padding: 5px;
+    }
+
+    .client-description {
+        width: 115px;
+        height: 65px;
+    }
+
     .footer {
         font-size: 0.9em;
     }

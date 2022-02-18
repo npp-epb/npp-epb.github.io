@@ -171,6 +171,7 @@ a:active {
 }
 
 #expand-clients-checkbox:checked~.expand-clients-label .triangle-down {
+    margin-top: 10px;
     transform: rotate(-45deg);
 }
 
@@ -186,8 +187,8 @@ a:active {
     display: inline-block;
     width: 15px;
     height: 15px;
-    border-right: 1px solid black;
-    border-top: 1px solid black;
+    border-right: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
     transform: rotate(135deg);
     margin-right: 0.5em;
     margin-left: 1.0em;

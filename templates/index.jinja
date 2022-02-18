@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -11,29 +11,20 @@
 </head>
 
 <body>
-    <section>
-        <div class="navbar flex space-between-center">
+    <section class="navbar-section">
+        <div class="navbar flex space-between-align-center">
             <div class="epb-logo"><a href="/"><img class="epb-logo-img" src="static/i/epb-logo.jpg" /></a></div>
-            <div class="navbar-links flex space-between-center">
+            <div class="navbar-links flex space-between-align-center">
                 <div class="text-nowrap"><a href="#about-us">О нас</a></div>
                 <div><a href="#solutions">Решения</a></div>
                 <div><a href="#partners">Партнеры</a></div>
                 <div><a href="#clients">Клиенты</a></div>
                 <div><a href="#contact">Контакты</a></div>
-                <div class="contact text-align-right">
-                    <span>Обратная связь:</span>
-                    <br>
-                    <span class="aqua">
-                        +7 (495) 780-35-98
-                        <br>
-                        <a href="mailto:info@npp-epb.ru">info@npp-epb.ru</a>
-                    </span>
-                </div>
             </div>
         </div>
     </section>
 
-    <section>
+    <section class="licenses-section">
         <div class="aqua heading">ЗАО НПП «ЭПБ» - ЭКСПЕРТ ПО БЕЗОПАСНОСТИ</div>
         <p>ЗАО НПП «ЭПБ» имеет все необходимые лицензии и обладает большим опытом в области защиты конфиденциальной
             информации, в том числе персональных данных и аттестации информационных систем персональных данных по
@@ -58,37 +49,50 @@
         </div>
     </section>
 
-    <section>
-        <div class="heading-2">
-            Наши Клиенты
-        </div>
-        <input id="expand-clients-checkbox" type="checkbox"/>
+    <div class="heading-2">
+        Наши Клиенты
+    </div>
+
+    <input id="expand-clients-checkbox" type="checkbox"/>
+    <section class="clients-section">
         <div class="clients">
+            {% set max_shown_clients = 18 %}
             {% for filename, description, link in clients %}
-                {% if loop.index > 16 %}
+                {% if loop.index > max_shown_clients %}
             <div class="hidden-client">
                 {% else %}
             <div>
                 {% endif %}
-                <a target="_blank" href="{{ link }}">
+                <a target="_blank" href="{{ link }}" title="{{ description }}">
                     <div class="client-img">
-                        {% if loop.index > 16 %}
+                        {% if loop.index > max_shown_clients %}
                         <img src="static/i/client/{{ filename }}" loading="lazy"/>
                         {% else %}
                         <img src="static/i/client/{{ filename }}"/>
                         {% endif %}
                     </div>
-                    <div class="client-description">{{ description }}</div>
                 </a>
             </div>
             {% endfor %}
         </div>
-        <label class="expand-clients-label" for="expand-clients-checkbox"><div class="triangle-down"></div></label>
     </section>
 
-    <section class="footer">
-        &#169; 2013–<span id="footer-year">2022</span> ЗАО НПП "ЭПБ"<span class="aqua"><a href="/legal"> Правовая
-                информация</a></span>
+    <label class="expand-clients-label" for="expand-clients-checkbox"><div class="triangle-down"></div></label>
+
+    <section class="footer-section">
+        <div class="flex footer-content">
+            <div class="years">
+                &#169; 2013–<span id="footer-year">2022</span> ЗАО НПП "ЭПБ"<span class="aqua"><a href="/legal"> Правовая
+                        информация</a></span>
+            </div>
+            <div class="contact text-align-right">
+                <span class="aqua">
+                    +7 (495) 780-35-98
+                    <br>
+                    <a href="mailto:info@npp-epb.ru">info@npp-epb.ru</a>
+                </span>
+            </div>
+        </div>
     </section>
 
     <script>

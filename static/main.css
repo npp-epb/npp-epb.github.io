@@ -1,11 +1,17 @@
 body {
     margin: 0;
     padding: 0;
-    width: 75vw;
     margin: auto;
     color: #141a20;
     font-family: Tahoma, Verdana, Arial, Helvetica;
     overflow-x: hidden;
+}
+
+.navbar-section,
+.licenses-section,
+.footer-section {
+    width: 75vw;
+    margin: auto;
 }
 
 a,
@@ -21,7 +27,7 @@ a:active {
     display: flex;
 }
 
-.space-between-center {
+.space-between-align-center {
     justify-content: space-between;
     align-items: center;
 }
@@ -36,6 +42,7 @@ a:active {
 
 .navbar-links {
     column-gap: 75px;
+    margin-right: 10px;
 }
 
 .epb-logo {
@@ -101,13 +108,17 @@ a:active {
     margin: auto;
 }
 
+.clients-section {
+    padding: 30px;
+}
+
 .clients {
-    width: 55vw;
+    width: 75vw;
     margin: auto;
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
     justify-content: center;
-    gap: 10px;
+    gap: 50px;
 }
 
 .clients>div {
@@ -117,24 +128,6 @@ a:active {
     background: #fff;
     position: relative;
     box-shadow: 5px 5px #f6f7fa;
-}
-
-.client-description {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 120px;
-    height: 70px;
-    padding-top: 50px;
-    text-align: center;
-    word-break: break-word;
-    opacity: 0;
-    transition: opacity 125ms ease-out;
-    background: rgba(246, 247, 250, 0.77);
-}
-
-.clients>div:hover .client-description {
-    opacity: 1;
 }
 
 .client-img {
@@ -158,7 +151,7 @@ a:active {
 
 .expand-clients-label {
     display: block;
-    margin-top: 30px;
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -171,7 +164,7 @@ a:active {
     animation: 0.8s alternate slidein;
 }
 
-#expand-clients-checkbox:checked+.clients .hidden-client {
+#expand-clients-checkbox:checked+.clients-section .clients .hidden-client {
     display: block;
 }
 
@@ -194,10 +187,15 @@ a:active {
     cursor: pointer;
 }
 
-.footer {
+.footer-section {
     border-top: 1px solid #e0e0e0;
-    margin-top: 30px;
-    padding: 30px 0 30px 0;
+    margin-top: 20px;
+    padding: 20px 0 20px 0;
+}
+
+.footer-content {
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 @keyframes slidein {
@@ -205,7 +203,7 @@ a:active {
         opacity: 0;
         transform: translateY(100%);
     }
-    
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -217,16 +215,12 @@ a:active {
         width: 90vw;
     }
 
-    .contact {
-        display: none;
-    }
-
     .licenses>div {
         width: 185px;
     }
 
     .clients {
-        width: unset;
+        width: 100%;
     }
 }
 
@@ -267,20 +261,24 @@ a:active {
         width: 100%;
     }
 
+    .clients {
+        gap: 20px;
+    }
+
     .clients>div {
         padding: 5px;
     }
 
-    .clients>div:hover .client-description {
-        opacity: 0;
-    }
-
-    .client-description {
-        width: 115px;
-        height: 65px;
-    }
-
-    .footer {
+    .footer-section {
         font-size: 0.9em;
+    }
+
+    .footer-content {
+        display: block;
+    }
+
+    .contact {
+        text-align: left;
+        margin-top: 10px;
     }
 }

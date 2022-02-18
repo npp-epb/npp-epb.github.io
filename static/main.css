@@ -211,7 +211,10 @@ a:active {
 }
 
 @media (max-width: 1300px) {
-    body {
+
+    .navbar-section,
+    .licenses-section,
+    .footer-section {
         width: 90vw;
     }
 

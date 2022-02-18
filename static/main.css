@@ -168,7 +168,7 @@ a:active {
 
 .hidden-client {
     display: none;
-    animation: 0.5s alternate slidein;
+    animation: 0.7s alternate slidein;
 }
 
 #expand-clients-checkbox:checked+.clients .hidden-client {

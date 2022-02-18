@@ -264,8 +264,13 @@ a:active {
         width: 100%;
     }
 
+    .clients-section {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .clients {
-        gap: 20px;
+        gap: 15px;
     }
 
     .clients>div {

@@ -168,7 +168,7 @@ a:active {
 
 .hidden-client {
     display: none;
-    animation: 0.7s alternate slidein;
+    animation: 0.8s alternate slidein;
 }
 
 #expand-clients-checkbox:checked+.clients .hidden-client {
@@ -202,11 +202,11 @@ a:active {
 
 @keyframes slidein {
     from {
-        margin-top: 100%;
+        transform: translateY(100%);
     }
-
+    
     to {
-        margin-top: 0%;
+        transform: translateY(0);
     }
 }
 

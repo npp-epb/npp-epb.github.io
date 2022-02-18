@@ -62,36 +62,28 @@
         <div class="heading-2">
             Наши Клиенты
         </div>
+        <input id="expand-clients-checkbox" type="checkbox"/>
         <div class="clients">
-            {% for filename, description, link in clients[:16] %}
+            {% for filename, description, link in clients %}
+                {% if loop.index > 16 %}
+            <div class="hidden-client">
+                {% else %}
             <div>
+                {% endif %}
                 <a target="_blank" href="{{ link }}">
                     <div class="client-img">
+                        {% if loop.index > 16 %}
+                        <img src="static/i/client/{{ filename }}" loading="lazy"/>
+                        {% else %}
                         <img src="static/i/client/{{ filename }}"/>
+                        {% endif %}
                     </div>
                     <div class="client-description">{{ description }}</div>
                 </a>
             </div>
             {% endfor %}
         </div>
-        <div style="margin-top: 10px;" class="expand-clients">
-            <input id="expand-clients-checkbox" type="checkbox"/>
-            <div class="expand-clients-content">
-                <div class="clients">
-                    {% for filename, description, link in clients[16:] %}
-                    <div>
-                        <a target="_blank" href="{{ link }}">
-                            <div class="client-img">
-                                <img src="static/i/client/{{ filename }}" loading="lazy"/>
-                            </div>
-                            <div class="client-description">{{ description }}</div>
-                        </a>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <label class="expand-clients-label" for="expand-clients-checkbox"><div class="triangle-down"></div></label>
-        </div>
+        <label class="expand-clients-label" for="expand-clients-checkbox"><div class="triangle-down"></div></label>
     </section>
 
     <section class="footer">

@@ -103,7 +103,6 @@ a:active {
 
 .clients {
     width: 55vw;
-    margin: auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -158,7 +157,7 @@ a:active {
 
 .expand-clients-label {
     display: block;
-    margin-top: 20px;
+    margin-top: 30px;
     text-align: center;
 }
 
@@ -166,18 +165,17 @@ a:active {
     display: none;
 }
 
-#expand-clients-checkbox:checked+.expand-clients-content {
+.hidden-client {
+    display: none;
+    animation: 0.5s alternate slidein;
+}
+
+#expand-clients-checkbox:checked+.clients .hidden-client {
     display: block;
 }
 
 #expand-clients-checkbox:checked~.expand-clients-label .triangle-down {
-    margin-top: 10px;
     transform: rotate(-45deg);
-}
-
-.expand-clients-content {
-    display: none;
-    animation: 0.5s alternate slidein;
 }
 
 .triangle-down {
@@ -203,11 +201,11 @@ a:active {
 
 @keyframes slidein {
     from {
-        padding-top: 100%;
+        margin-top: 100%;
     }
 
     to {
-        padding-left: 0%;
+        margin-top: 0%;
     }
 }
 

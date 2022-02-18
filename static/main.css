@@ -103,6 +103,7 @@ a:active {
 
 .clients {
     width: 55vw;
+    margin: auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;

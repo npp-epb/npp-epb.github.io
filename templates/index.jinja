@@ -24,14 +24,39 @@
         </div>
     </section>
 
+    <div class="heading-2">
+        Наши Клиенты
+    </div>
+
+    <input id="expand-clients-checkbox" type="checkbox" />
+    <section class="clients-section">
+        <div class="clients">
+            {% set max_shown_clients = 16 %}
+            {% for filename, description, link in clients %}
+                {% if loop.index > max_shown_clients %}
+                <div class="hidden-client">
+                {% else %}
+                <div>
+                {% endif %}
+                    <a target="_blank" href="{{ link }}" title="{{ description }}">
+                        <div class="client-img">
+                            {% if loop.index > max_shown_clients %}
+                            <img src="static/i/client/{{ filename }}" loading="lazy" />
+                            {% else %}
+                            <img src="static/i/client/{{ filename }}" />
+                            {% endif %}
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+            </div>
+    </section>
+
+    <label class="expand-clients-label" for="expand-clients-checkbox">
+        <div class="triangle-down"></div>
+    </label>
+
     <section class="licenses-section">
-        <div class="aqua heading">ЗАО НПП «ЭПБ» - ЭКСПЕРТ ПО БЕЗОПАСНОСТИ</div>
-        <p>ЗАО НПП «ЭПБ» имеет все необходимые лицензии и обладает большим опытом в области защиты конфиденциальной
-            информации, в том числе персональных данных и аттестации информационных систем персональных данных по
-            требованиям безопасности информации и оказывает полный спектр услуг по данному направлению с соблюдением
-            всех требований нормативных правовых документов ФСБ и ФСТЭК России.</p>
-        <p>Для реализации проектов по обеспечению безопасности в информационных системах персональных данных наша
-            компания предлагает организационные и программно-технические решения.</p>
         <div class="heading-2">
             Лицензии
         </div>
@@ -41,7 +66,7 @@
             <div>
                 <div class="license-img">
                     <a target="_blank" href="static/i/license/orig/{{ filename }}"><img
-                            src="static/i/license/preview/{{ name }}-preview.{{ ext }}"/></a>
+                            src="static/i/license/preview/{{ name }}-preview.{{ ext }}" /></a>
                 </div>
                 <div class="license-description">{{ description }}</div>
             </div>
@@ -49,40 +74,11 @@
         </div>
     </section>
 
-    <div class="heading-2">
-        Наши Клиенты
-    </div>
-
-    <input id="expand-clients-checkbox" type="checkbox"/>
-    <section class="clients-section">
-        <div class="clients">
-            {% set max_shown_clients = 18 %}
-            {% for filename, description, link in clients %}
-                {% if loop.index > max_shown_clients %}
-            <div class="hidden-client">
-                {% else %}
-            <div>
-                {% endif %}
-                <a target="_blank" href="{{ link }}" title="{{ description }}">
-                    <div class="client-img">
-                        {% if loop.index > max_shown_clients %}
-                        <img src="static/i/client/{{ filename }}" loading="lazy"/>
-                        {% else %}
-                        <img src="static/i/client/{{ filename }}"/>
-                        {% endif %}
-                    </div>
-                </a>
-            </div>
-            {% endfor %}
-        </div>
-    </section>
-
-    <label class="expand-clients-label" for="expand-clients-checkbox"><div class="triangle-down"></div></label>
-
     <section class="footer-section">
         <div class="flex footer-content">
             <div class="years">
-                &#169; 2013–<span id="footer-year">2022</span> ЗАО НПП "ЭПБ"<span class="aqua"><a href="/legal"> Правовая
+                &#169; 2013–<span id="footer-year">2022</span> ЗАО НПП "ЭПБ"<span class="aqua"><a href="/legal">
+                        Правовая
                         информация</a></span>
             </div>
             <div class="contact text-align-right">

@@ -14,6 +14,10 @@ body {
     margin: auto;
 }
 
+.navbar-section {
+    border-bottom: 1px solid #e0e0e0;
+}
+
 .footer-section {
     border-top: 1px solid #e0e0e0;
     margin-top: 40px;
@@ -243,7 +247,6 @@ a:active {
     transform: rotate(0deg) scale(0.6);
     transition: .5s ease-in-out;
     cursor: pointer;
-    user-select: none;
 }
 
 #nav-icon3 span {
@@ -294,7 +297,6 @@ a:active {
 @media (max-width: 858px) {
     .navbar-section {
         width: 100vw;
-        border-bottom: 1px solid #e0e0e0;
     }
 
     .navbar {

@@ -14,10 +14,6 @@ body {
     margin: auto;
 }
 
-.navbar-section {
-    border-bottom: 1px solid #e0e0e0;
-}
-
 .footer-section {
     border-top: 1px solid #e0e0e0;
     margin-top: 40px;
@@ -31,6 +27,10 @@ a:link,
 a:active {
     color: inherit;
     text-decoration: none;
+}
+
+#expand-navbar-checkbox, .expand-navbar-label {
+    display: none;
 }
 
 .navbar {
@@ -57,8 +57,7 @@ a:active {
 }
 
 .epb-logo-img {
-    width: 30vw;
-    max-width: 210px;
+    width: 210px;
     height: auto;
 }
 
@@ -153,7 +152,7 @@ a:active {
 
 .hidden-client {
     display: none;
-    animation: 0.8s alternate slidein;
+    animation: 0.8s alternate slideY;
 }
 
 #expand-clients-checkbox:checked+.clients-section .clients .hidden-client {
@@ -186,7 +185,7 @@ a:active {
     align-items: flex-start;
 }
 
-@keyframes slidein {
+@keyframes slideY {
     from {
         opacity: 0;
         transform: translateY(100%);
@@ -195,6 +194,18 @@ a:active {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes slideX {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -225,22 +236,117 @@ a:active {
     }
 }
 
+#nav-icon3 {
+    width: 60px;
+    height: 45px;
+    position: relative;
+    transform: rotate(0deg) scale(0.6);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    user-select: none;
+}
+
+#nav-icon3 span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    background: #000000;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+#nav-icon3 span:nth-child(1) {
+    top: 0px;
+}
+
+#nav-icon3 span:nth-child(2), #nav-icon3 span:nth-child(3) {
+    top: 18px;
+}
+
+#nav-icon3 span:nth-child(4) {
+    top: 36px;
+}
+
+#nav-icon3.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+
 @media (max-width: 858px) {
     .navbar-section {
-        padding-bottom: 10px;
+        width: 100vw;
+        border-bottom: 1px solid #e0e0e0;
     }
 
-    .navbar-links>div {
+    .navbar {
+        margin: 0;
+        padding: 20px;
+    }
+
+    .navbar-links {
         display: none;
+        margin: 0;
+        animation: 0.4s alternate slideX;
     }
 
-    .epb-logo-img {
-        width: 50vw;
-        max-width: 400px;
+    .expand-navbar-label {
+        display: block;
+        float: right;
+    }
+
+    #expand-navbar-checkbox:checked+.navbar-section {
+        position: fixed;
+        z-index: 1;
+        background: #ffffff;
+    }
+
+    #expand-navbar-checkbox:checked~.heading-2 {
+        padding-top: 156px;
+    }
+
+    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links {
+        display: block;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 125px;
+        right: 0;
+        z-index: 1;
+        padding: 20px;
+        text-align: right;
+        font-size: 20pt;
+        background: #eeeeee;
+    }
+
+    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links>div {
+        display: block;
+        margin-top: 50px;
+    }
+
+    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links>div:first-child {
+        margin-top: 0;
     }
 
     .epb-logo {
-        margin: auto;
         padding: 0;
     }
 

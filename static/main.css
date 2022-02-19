@@ -7,20 +7,31 @@ body {
     overflow-x: hidden;
 }
 
-.navbar-section,
-.licenses-section,
-.footer-section {
-    width: 75vw;
-    margin: auto;
+.navbar-links a, .footer-content .years a {
+    transition: .15s ease;
+}
+
+.navbar-links a:hover, .footer-content .years a:hover {
+    color: #adb5bd;
 }
 
 .navbar-section {
     border-bottom: 1px solid #e0e0e0;
 }
 
+.licenses-section {
+    background-color: #f8f9fa;
+    padding-bottom: 50px;
+}
+
+.yandex-maps-section {
+    background-color: #e9ecef;
+    padding: 50px 0 40px 0;
+}
+
 .footer-section {
-    border-top: 1px solid #e0e0e0;
-    margin-top: 40px;
+    background-color: #e9ecef;
+    border-top: 1px solid #ced4da;
     padding: 20px 0 20px 0;
 }
 
@@ -38,10 +49,13 @@ a:active {
 }
 
 .navbar {
+    width: 75vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .navbar>div {
@@ -85,11 +99,9 @@ a:active {
     white-space: nowrap;
 }
 
-.aqua {
-    color: #09b3d6;
-}
-
 .licenses {
+    width: 75vw;
+    margin: auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -101,7 +113,7 @@ a:active {
     padding: 15px;
     text-align: center;
     background: #fbfbfc;
-    box-shadow: 5px 5px #eeeeee;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .license-img {
@@ -146,7 +158,7 @@ a:active {
 
 .expand-clients-label {
     display: block;
-    margin-top: 20px;
+    margin: 20px 0;
     text-align: center;
 }
 
@@ -165,7 +177,7 @@ a:active {
 
 #expand-clients-checkbox:checked~.expand-clients-label .triangle-down {
     transform: rotate(-45deg);
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
 .triangle-down {
@@ -184,6 +196,8 @@ a:active {
 }
 
 .footer-content {
+    width: 75vw;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -224,10 +238,7 @@ a:active {
 }
 
 @media (max-width: 1300px) {
-
-    .navbar-section,
-    .licenses-section,
-    .footer-section {
+    .navbar {
         width: 90vw;
     }
 
@@ -237,6 +248,10 @@ a:active {
 
     .clients {
         width: 100%;
+    }
+
+    .footer-content {
+        width: 90vw;
     }
 }
 

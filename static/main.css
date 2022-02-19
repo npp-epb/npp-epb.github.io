@@ -175,8 +175,8 @@ a:active {
     display: inline-block;
     width: 15px;
     height: 15px;
-    border-right: 1px solid #bebebe;
-    border-top: 1px solid #bebebe;
+    border-right: 2px solid #bebebe;
+    border-top: 2px solid #bebebe;
     transform: rotate(135deg);
     margin-right: 0.5em;
     margin-left: 1.0em;

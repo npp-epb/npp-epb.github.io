@@ -33,16 +33,10 @@ a:active {
     text-decoration: none;
 }
 
-.flex {
+.navbar {
     display: flex;
-}
-
-.space-between-align-center {
     justify-content: space-between;
     align-items: center;
-}
-
-.navbar {
     margin-top: 30px;
 }
 
@@ -51,6 +45,9 @@ a:active {
 }
 
 .navbar-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     column-gap: 75px;
     margin-right: 10px;
 }
@@ -184,6 +181,7 @@ a:active {
 }
 
 .footer-content {
+    display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
@@ -271,7 +269,7 @@ a:active {
     }
 
     .footer-section {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 
     .footer-content {

@@ -342,19 +342,7 @@ a:active {
 }
 
 @media (max-width: 1300px) {
-    .navbar {
-        width: 90vw;
-    }
-
-    .licenses>div {
-        width: 185px;
-    }
-
-    .clients {
-        width: 100%;
-    }
-
-    .footer-content {
+    .navbar, .clients, .licenses, .details, .footer-content {
         width: 90vw;
     }
 }
@@ -441,6 +429,7 @@ a:active {
     }
 
     .clients {
+        width: 100%;
         justify-content: space-evenly;
         gap: 50px;
     }

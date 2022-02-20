@@ -311,10 +311,6 @@ a:active {
     left: 50%;
 }
 
-.dropdown {
-    cursor: pointer;
-}
-
 .dropdown span {
     position: relative;
     font-size: 16px;
@@ -333,31 +329,50 @@ a:active {
     transition: .3s;
 }
 
-.dropdown-content {
+.dropdown-content-wrapper {
     position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    transition: transform .5s;
-    transform: translateY(-500px);
+    top: 146px;
+    left: 12vw;
+    width: 75vw;
+    height: 445px;
+    color: #141a20;
+    background: rgba(255, 255, 255, 0.95);
+    max-height: 0;
+    transition: max-height 0.5s 0.5s;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.navbar-links>div:hover .dropdown .dropdown-content-wrapper {
+    max-height: 100%;
+    transition: max-height 0.5s;
+}
+
+.dropdown-content {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 30px 30px;
+    padding: 30px;
+}
+
+.dropdown-content-block {
+    width: 33vw;
+}
+
+.dropdown-content-heading {
+    font-size: 16pt;
+    text-align: left;
+}
+
+.dropdown-content-block-content {
+    text-align: justify;
 }
 
 .navbar-links>div:hover .dropdown span:after {
     transform: rotate(180deg);
     border-top: 3px solid #adb5bd;
-}
-
-.navbar-links>div:hover .dropdown .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-    width: 75vw;
-    height: 500px;
-    top: 146px;
-    left: 12vw;
-    padding: 20px;
-    color: #141a20;
-    background: #000;
-    z-index: 0;
-    transform: translateY(0);
 }
 
 @keyframes slideY {
@@ -395,8 +410,21 @@ a:active {
 }
 
 @media (max-width: 1300px) {
-    .navbar, .clients, .licenses, .details, .footer-content {
+    .navbar,
+    .clients,
+    .licenses,
+    .details,
+    .footer-content {
         width: 90vw;
+    }
+
+    .dropdown-content-wrapper {
+        width: 95vw;
+    }
+
+    .dropdown-content-wrapper {
+        left: 2vw;
+        height: 100vh;
     }
 }
 
@@ -418,6 +446,10 @@ a:active {
         display: none;
         margin: 0;
         animation: 0.4s alternate slideX;
+    }
+
+    .dropdown {
+        display: none;
     }
 
     .expand-navbar-label {
@@ -455,7 +487,8 @@ a:active {
         margin-top: 50px;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links>div:first-child {
+    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links>div:first-child,
+    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links>div:nth-child(2) {
         margin-top: 0;
     }
 

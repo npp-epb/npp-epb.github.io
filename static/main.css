@@ -126,7 +126,7 @@ a:active {
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, 100px);
-    justify-content: center;
+    justify-content: space-around;
     gap: 75px;
 }
 

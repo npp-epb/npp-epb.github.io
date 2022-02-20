@@ -212,7 +212,7 @@ a:active {
     position: absolute;
     width: 500px;
     height: 100%;
-    padding: 30px;
+    padding: 20px 30px 30px 30px;
     background: rgb(233, 236, 239, 0.92);
     z-index: 1;
     text-align: right;
@@ -230,7 +230,7 @@ a:active {
 }
 
 .yandex-maps-panel>div:first-child {
-    margin-top: 20px;
+    margin-top: 0;
 }
 
 .details {
@@ -356,6 +356,10 @@ a:active {
         width: 100vw;
     }
 
+    .contact-section {
+        padding: 0;
+    }
+
     .navbar {
         margin: 0;
         padding: 20px;
@@ -442,6 +446,7 @@ a:active {
     .yandex-maps-panel {
         right: 0;
         width: 90vw;
+        padding: 30px;
     }
 
     .details {

@@ -87,7 +87,6 @@ clients = [
     ('ФГБУ КАНАЛ ИМЕНИ МОСКВЫ.png', 'ФГБУ КАНАЛ ИМЕНИ МОСКВЫ', 'https://kim-online.ru/'),
     ('ФФИН БАНК.jpeg', 'ФФИН БАНК', 'https://bankffin.ru/'),
     ('ЦБИ.jpeg', 'ЦБИ', 'http://www.cbi-info.ru/'),
-    ('ЦСТБИ.png', 'ЦСТБИ', 'https://cstbi.ru/'),
     ('Энсис Технологии.png', 'Энсис Технологии', 'https://www.ensyst.ru/'),
     ('Эрлан.png', 'Эрлан', 'http://www.airlan.ru/'),
     ('ЭТП ГПБ Консалтинг.png', 'ЭТП ГПБ Консалтинг', 'https://uc-gpb.ru/'),

@@ -27,9 +27,9 @@ body {
     padding-bottom: 50px;
 }
 
-.yandex-maps-section {
+.contact-section {
     background-color: #e9ecef;
-    padding: 50px 0 40px 0;
+    padding: 0 0 40px 0;
 }
 
 .footer-section {
@@ -92,7 +92,6 @@ a:active {
 }
 
 .heading-2 {
-    color: #141a20;
     font-size: 26pt;
     text-align: center;
     padding: 30px 0;
@@ -198,12 +197,114 @@ a:active {
     cursor: pointer;
 }
 
+.yandex-maps {
+    position: relative;
+    overflow: hidden;
+}
+
+.yandex-maps-panel {
+    top: 0;
+    right: 15%;
+    position: absolute;
+    width: 500px;
+    height: 100%;
+    padding: 30px;
+    background: rgb(233, 236, 239, 0.92);
+    z-index: 1;
+    text-align: right;
+    font-size: 15pt;
+    line-height: 30px;
+}
+
+.yandex-maps-panel-heading {
+    font-size: 26pt;
+    text-align: right;
+}
+
+.yandex-maps-panel>div {
+    margin-top: 30px;
+}
+
+.yandex-maps-panel>div:first-child {
+    margin-top: 20px;
+}
+
+.details {
+    width: 75vw;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.details-heading {
+    font-size: 26pt;
+    text-align: left;
+}
+
+.details-content {
+    margin-top: 20px;
+    line-height: 25px;
+}
+
 .footer-content {
     width: 75vw;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+#hamburger {
+    width: 60px;
+    height: 45px;
+    position: relative;
+    transform: rotate(0deg) scale(0.6);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+#hamburger span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    background: #000000;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+#hamburger span:nth-child(1) {
+    top: 0px;
+}
+
+#hamburger span:nth-child(2), #hamburger span:nth-child(3) {
+    top: 18px;
+}
+
+#hamburger span:nth-child(4) {
+    top: 36px;
+}
+
+#hamburger.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+
+#hamburger.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+#hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+#hamburger.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
 }
 
 @keyframes slideY {
@@ -258,60 +359,6 @@ a:active {
     }
 }
 
-#nav-icon3 {
-    width: 60px;
-    height: 45px;
-    position: relative;
-    transform: rotate(0deg) scale(0.6);
-    transition: .5s ease-in-out;
-    cursor: pointer;
-}
-
-#nav-icon3 span {
-    display: block;
-    position: absolute;
-    height: 9px;
-    width: 100%;
-    background: #000000;
-    border-radius: 9px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
-}
-
-#nav-icon3 span:nth-child(1) {
-    top: 0px;
-}
-
-#nav-icon3 span:nth-child(2), #nav-icon3 span:nth-child(3) {
-    top: 18px;
-}
-
-#nav-icon3 span:nth-child(4) {
-    top: 36px;
-}
-
-#nav-icon3.open span:nth-child(1) {
-    top: 18px;
-    width: 0%;
-    left: 50%;
-}
-
-#nav-icon3.open span:nth-child(2) {
-    transform: rotate(45deg);
-}
-
-#nav-icon3.open span:nth-child(3) {
-    transform: rotate(-45deg);
-}
-
-#nav-icon3.open span:nth-child(4) {
-    top: 18px;
-    width: 0%;
-    left: 50%;
-}
-
 @media (max-width: 858px) {
     .navbar-section {
         width: 100vw;
@@ -335,7 +382,7 @@ a:active {
 
     #expand-navbar-checkbox:checked+.navbar-section {
         position: fixed;
-        z-index: 1;
+        z-index: 2;
         background: #ffffff;
     }
 
@@ -350,7 +397,7 @@ a:active {
         height: 100vh;
         top: 125px;
         right: 0;
-        z-index: 1;
+        z-index: 2;
         padding: 20px;
         text-align: right;
         font-size: 20pt;
@@ -396,6 +443,16 @@ a:active {
     .clients {
         justify-content: space-evenly;
         gap: 50px;
+    }
+
+    .yandex-maps-panel {
+        right: 0;
+        width: 90vw;
+        background: rgb(233, 236, 239, 0.8);
+    }
+
+    .details {
+        width: 90vw;
     }
 
     .footer-section {

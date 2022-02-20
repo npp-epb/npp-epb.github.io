@@ -213,7 +213,7 @@ a:active {
     width: 500px;
     height: 100%;
     padding: 20px 30px 30px 30px;
-    background: rgb(233, 236, 239, 0.92);
+    background: rgb(233, 236, 239, 0.9);
     z-index: 1;
     text-align: right;
     font-size: 15pt;
@@ -309,6 +309,55 @@ a:active {
     top: 18px;
     width: 0%;
     left: 50%;
+}
+
+.dropdown {
+    cursor: pointer;
+}
+
+.dropdown span {
+    position: relative;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.dropdown span:after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    margin-top: -2px;
+    border-top: 4px solid #333;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    transition: .3s;
+}
+
+.dropdown-content {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform .5s;
+    transform: translateY(-500px);
+}
+
+.navbar-links>div:hover .dropdown span:after {
+    transform: rotate(180deg);
+    border-top: 3px solid #adb5bd;
+}
+
+.navbar-links>div:hover .dropdown .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    width: 75vw;
+    height: 500px;
+    top: 146px;
+    left: 12vw;
+    padding: 20px;
+    color: #141a20;
+    background: #000;
+    z-index: 0;
+    transform: translateY(0);
 }
 
 @keyframes slideY {

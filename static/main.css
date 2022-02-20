@@ -7,11 +7,14 @@ body {
     overflow-x: hidden;
 }
 
-.navbar-links a, .footer-content .years a {
+.navbar-links a,
+.footer-content .years a,
+.expand-clients-label .triangle-down {
     transition: .15s ease;
 }
 
-.navbar-links a:hover, .footer-content .years a:hover {
+.navbar-links a:hover,
+.footer-content .years a:hover {
     color: #adb5bd;
 }
 

@@ -261,7 +261,7 @@ a:active {
     width: 60px;
     height: 45px;
     position: relative;
-    transform: rotate(0deg) scale(0.6);
+    transform: rotate(0deg) scale(0.5);
     transition: .5s ease-in-out;
     cursor: pointer;
 }
@@ -370,6 +370,7 @@ a:active {
     .expand-navbar-label {
         display: block;
         float: right;
+        padding-top: 20px;
     }
 
     #expand-navbar-checkbox:checked+.navbar-section {

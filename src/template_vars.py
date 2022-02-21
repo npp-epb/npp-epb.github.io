@@ -93,6 +93,19 @@ clients = [
     ('Эрлан.png', 'Эрлан', 'http://www.airlan.ru/'),
     ('ЭТП ГПБ Консалтинг.png', 'ЭТП ГПБ Консалтинг', 'https://uc-gpb.ru/'),
     ('ЭТП ГПБ.png', 'ЭТП ГПБ', 'https://etpgpb.ru/'),
+    ('ibank2ru.svg', 'ООО «ИБАНК2.РУ»', 'https://ibank2.ru/'),
+    ('Амтел связь.svg', 'ЗАО «АМТЕЛ-СВЯЗЬ»', 'https://amtelcom.ru/ru/'),
+    ('Банк ЗЕНИТ.svg', 'Банк ЗЕНИТ', 'https://www.zenit.ru/'),
+    ('Банк МБА-Москва.svg', 'Банк МБА-Москва', 'https://www.ibam.ru/'),
+    ('Дозор-Телепорт.jpg', 'Дозор-Телепорт', 'https://dozortel.ru/'),
+    ('ЗИКС.png', 'ООО «Компания-ЗИКС»', 'http://czics.ru/'),
+    ('ООО СчетМашСервис.jpg', 'СчетМашСервис', 'https://kkt-spb.ru/'),
+    ('Россельхозбанк.jpg', 'Россельхозбанк', 'https://www.rshb.ru/'),
+    ('Элвис.svg', 'ОАО НПЦ «ЭЛВИС»', 'https://elvees.ru/'),
+    ('БИФИТ.jpg', 'ОАО «БИФИТ»', 'https://bifit.com/'),
+    ('НКБ.png', 'ООО КБ &quot;НКБ&quot;', 'https://ncb-bank.ru/'),
+    ('Аквариус.png', 'ООО &quot;ПК Аквариус&quot;', 'https://www.aq.ru/'),
+    ('Диона Холдинг.svg', 'ООО &quot;Диона Холдинг&quot;', 'http://www.dionaholding.ru/'),
 ]
 
 solutions = [

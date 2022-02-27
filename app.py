@@ -15,7 +15,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
 
-main_css = 'static/main.min.css'
+main_css = 'static/main.css'
 __file__dirname = os.path.dirname(os.path.realpath(__file__))
 
 def requires_password(route):
@@ -93,6 +93,6 @@ def edit_file(subpath: str):
 
 
 if __name__ == '__main__':
-    # app.run(debug=True, host='localhost', port=5000)
+    main_css = 'static/main.min.css'
     wsgi = WSGIServer(('0.0.0.0', int(os.environ.get('PORT'))), app)
     wsgi.serve_forever()

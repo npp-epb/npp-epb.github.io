@@ -19,10 +19,15 @@ from src.template_vars import *
 
 from jinja2 import Environment, FileSystemLoader
 
+def build_page(name: str) -> None:
+    template = env.get_template(f'{name}.jinja')
+    page = template.render(**globals())
+    with open(f'{name}.html', "w", encoding='utf-8') as f:
+        f.write(page)
+
 main_css = main_min_css_path if main_min_css else main_css_path
 
-env = Environment(loader=FileSystemLoader("."), trim_blocks=True, lstrip_blocks=True)
-template = env.get_template("templates/index.jinja")
-index_page = template.render(**globals())
-with open('index.html', "w", encoding='utf-8') as f:
-    f.write(index_page)
+env = Environment(loader=FileSystemLoader("./templates"), trim_blocks=True, lstrip_blocks=True)
+
+build_page("index")
+build_page("legal")

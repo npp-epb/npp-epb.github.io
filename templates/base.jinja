@@ -1,12 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="static/i/favicon.ico">
+    <link rel="stylesheet" href="{{ main_css }}">
     {% block head %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+    <input id="expand-navbar-checkbox" type="checkbox" />
+    <section class="navbar-section">
+        <div class="navbar">
+            <div class="epb-logo"><a href="/"><img class="epb-logo-img" src="static/i/epb-logo.jpg" /></a></div>
+            <label for="expand-navbar-checkbox" class="expand-navbar-label">
+                <div id="hamburger" onclick="this.classList.toggle('open');"><span></span><span></span><span></span><span></span></div>
+            </label>
+            <div class="navbar-links">
+                <div><a class="dropdown">
+                    <span style="cursor: pointer;">Решения</span>
+                    <div class="dropdown-content-wrapper">
+                        <div class="dropdown-content">
+                            {% for title, description in solutions %}
+                            <div class="dropdown-content-block">
+                                <div class="dropdown-content-heading">{{ title }}</div>
+                                <div class="dropdown-content-block-content">{{ description }}</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </a></div>
+                <div><a href="/#clients"  onclick="follow_navbar_anchor();">Клиенты</a></div>
+                <div><a href="/#licenses" onclick="follow_navbar_anchor();">Лицензии</a></div>
+                <div><a href="/#partners" onclick="follow_navbar_anchor();">Партнеры</a></div>
+                <div><a href="/#contact"  onclick="follow_navbar_anchor();">Контакты</a></div>
+            </div>
+        </div>
+    </section>
     {% block content %}{% endblock %}
+    <section class="footer-section">
+        <div class="footer-content">
+            <div class="years">
+                &#169; 2013–<span id="footer-year">2022</span> ЗАО НПП "ЭПБ"<span style="color: #6c757d"><a href="/legal">
+                        Правовая
+                        информация</a></span>
+            </div>
+            <div class="contact text-align-right">
+                +7 (495) 780-35-98
+                <br>
+                <a href="mailto:info@npp-epb.ru">info@npp-epb.ru</a>
+            </div>
+        </div>
+    </section>
+    <script>
+        function follow_navbar_anchor() {
+            window['expand-navbar-checkbox'].checked = false;
+            window['hamburger'].classList.remove('open');
+        }
+        window.onload = function() {
+            document.getElementById('footer-year').innerText = new Date().getFullYear();
+        };
+    </script>
 </body>
 </html>

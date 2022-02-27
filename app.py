@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 from functools import wraps
 
@@ -34,6 +36,11 @@ def is_safe_path(path: str) -> bool:
 @app.route('/')
 def index():
     return render_template('index.jinja', **globals())
+
+
+@app.route('/legal')
+def legal():
+    return render_template('legal.jinja', **globals())
 
 
 @app.route('/login', methods=['GET', 'POST'])

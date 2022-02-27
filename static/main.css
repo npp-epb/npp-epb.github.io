@@ -47,6 +47,13 @@ body {
     padding: 20px 0 20px 0;
 }
 
+.legal-section {
+    width: 75vw;
+    margin: auto;
+    text-align: justify;
+    padding-bottom: 412px;
+}
+
 a,
 a:hover,
 a:visited,
@@ -471,6 +478,10 @@ a:active {
 
     .contact-section {
         padding-top: 0;
+    }
+
+    .legal-section {
+        width: 90vw;
     }
 
     .navbar {

@@ -1,0 +1,12 @@
+{% extends "base.jinja" %}
+
+{% block title %}
+    login
+{% endblock %}
+
+{% block content %}
+    <form action="/login" method="post">
+        <input type="password" name="pw" placeholder="password">
+        <button>Login</button>
+    </form>
+{% endblock %}

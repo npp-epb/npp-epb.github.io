@@ -1,0 +1,36 @@
+{% extends "base.jinja" %}
+
+{% block head %}
+    <link rel="stylesheet" data-name="vs/editor/editor.main" href="{{ url_for('static', filename='monaco-editor/min/vs/editor/editor.main.css') }}">
+{% endblock %}
+
+{% block title %}
+    admin - edit template
+{% endblock %}
+
+{% block content %}
+    <div id="monaco_editor" style="width: 100vw; height: 90vh;"></div>
+    <form name="file_form" action="/edit/{{ path }}" method="post" onsubmit="submit_file_form(this)">
+        <input type="hidden" id="text" name="text">
+        <button>Submit</button>
+    </form>
+
+    <script>var require = { paths: { 'vs': `${location.origin}/static/monaco-editor/min/vs` } };</script>
+    <script src="{{ url_for('static', filename='monaco-editor/min/vs/loader.js') }}"></script>
+    <script src="{{ url_for('static', filename='monaco-editor/min/vs/editor/editor.main.nls.js') }}"></script>
+    <script src="{{ url_for('static', filename='monaco-editor/min/vs/editor/editor.main.js') }}"></script>
+    <script>
+        var h_div = document.getElementById('monaco_editor');
+        var editor = monaco.editor.create(h_div, {
+            language: '{{ lang }}'
+        });
+        function submit_file_form(form) {
+            form.text.value = editor.getValue();
+        }
+        async function set_editor_value_to_text() {
+            const response = await fetch(`${location.origin}/files/{{ path }}`, {credentials: 'include'}).then(r => r.json());
+            editor.setValue(response.text);
+        }
+        set_editor_value_to_text();
+    </script>
+{% endblock %}

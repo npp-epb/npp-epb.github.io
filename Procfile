@@ -1,0 +1,1 @@
+web: sh -c 'watchmedo auto-restart -p "*.py" -R python -- app.py'

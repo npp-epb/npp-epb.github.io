@@ -212,7 +212,7 @@ a:active {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 60px;
 }
 
 .partners>div {

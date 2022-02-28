@@ -846,7 +846,7 @@
                     <a href="mailto:info@npp-epb.ru">info@npp-epb.ru</a>
                 </div>
             </div>
-            <iframe src="https://yandex.ru/map-widget/v1/-/CCU5ZHEv8C" height="500" frameborder="0" allowfullscreen="true" style="position:relative; width: 100%;"></iframe>
+            <iframe id="yandex-maps" src="https://yandex.ru/map-widget/v1/-/CCU5ZHEv8C" height="500" frameborder="0" allowfullscreen="true" style="position:relative; width: 100%;"></iframe>
         </div>
         <div class="details">
             <div class="details-heading">
@@ -865,6 +865,11 @@
             </div>
         </div>
     </section>
+    <script>
+        if (window.matchMedia("(max-width: 858px)").matches) {
+            window['yandex-maps'].src = "";
+        }
+    </script>
     <section class="footer-section">
         <div class="footer-content">
             <div class="years">

@@ -601,5 +601,6 @@ a:active {
     .contact {
         text-align: left;
         margin-top: 10px;
+        line-height: inherit;
     }
 }

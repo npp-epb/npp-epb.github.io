@@ -552,13 +552,13 @@ a:active {
     }
 
     .licenses>div {
-        width: 160px;
+        width: 40vw;
         padding: 3px;
         font-size: 10pt;
     }
 
     .license-img {
-        width: inherit;
+        max-width: 100%;
         margin: auto;
     }
 

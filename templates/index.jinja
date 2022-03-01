@@ -94,7 +94,7 @@
                     <a href="mailto:info@npp-epb.ru">info@npp-epb.ru</a>
                 </div>
             </div>
-            <iframe id="yandex-maps" src="https://yandex.ru/map-widget/v1/-/CCU5ZHEv8C" height="500" frameborder="0" allowfullscreen="true" style="position:relative; width: 100%;"></iframe>
+            <iframe id="yandex-maps" height="500" frameborder="0" allowfullscreen="true" style="position:relative; width: 100%;"></iframe>
         </div>
         <div class="details">
             <div class="details-heading">
@@ -114,8 +114,18 @@
         </div>
     </section>
     <script>
-        if (window.matchMedia("(max-width: 858px)").matches) {
-            window['yandex-maps'].src = "";
+        var resize_timer = 0;
+        function do_resize() {
+            if (!window.matchMedia("(max-width: 858px)").matches)
+                window['yandex-maps'].src = "https://yandex.ru/map-widget/v1/-/CCU5ZHEv8C";
+            else
+                window['yandex-maps'].src = "";
         }
+        function on_resize() {
+            clearTimeout(resize_timer);
+            resize_timer = setTimeout(do_resize, 500);
+        }
+        window.addEventListener('load', do_resize);
+        window.addEventListener('resize', on_resize);
     </script>
 {% endblock %}

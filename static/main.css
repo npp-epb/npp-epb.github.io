@@ -463,11 +463,12 @@ a:active {
 
     .dropdown-content-wrapper {
         width: 95vw;
-    }
-
-    .dropdown-content-wrapper {
         left: 2vw;
         height: 100vh;
+    }
+
+    .dropdown-content-block {
+        width: 40vw;
     }
 }
 

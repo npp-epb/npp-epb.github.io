@@ -1,10 +1,13 @@
 {% extends "base.jinja" %}
 
-{% block title %}
-Эксперт по безопасности
+{% block head %}
+<link rel="stylesheet" href="static/splide/splide.min.css">
 {% endblock %}
 
+{% block title %}Эксперт по безопасности{% endblock %}
+
 {% block content %}
+
     <div class="heading-2" id="clients">
         Наши Клиенты
     </div>
@@ -59,16 +62,27 @@
         <div class="heading-2">
             Наши Партнеры
         </div>
-        <div class="partners flex">
-            {% for filename, title, description, link in partners %}
-            <div class="partner">
-                <a target="_blank" href="{{ link }}"><img src="static/i/partner/{{ filename }}"></a>
-                <div class="partner-info">
-                    <div class="partner-heading">{{ title }}</div>
-                    <div class="partner-description">{{ description }}</div>
-                </div>
+
+        <div class="splide" style="margin: auto;">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    {% for slide in partners_slides %}
+                        <div class="splide__slide">
+                            <div class="partners flex">
+                                {% for filename, title, description, link in slide %}
+                                <div class="partner">
+                                    <a target="_blank" href="{{ link }}"><img src="static/i/partner/{{ filename }}"></a>
+                                    <div class="partner-info">
+                                        <div class="partner-heading">{{ title }}</div>
+                                        <div class="partner-description">{{ description }}</div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </ul>
             </div>
-            {% endfor %}
         </div>
     </section>
 
@@ -127,5 +141,18 @@
         }
         window.addEventListener('load', do_resize);
         window.addEventListener('resize', on_resize);
+    </script>
+
+    <script src="static/splide/splide.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var splide = new Splide('.splide', {
+            width: '95vw',
+            autoHeight: true,
+            rewind: true,
+            pagination: false,
+        });
+        splide.mount();
+    });
     </script>
 {% endblock %}

@@ -149,8 +149,11 @@
         var splide = new Splide('.splide', {
             width: '95vw',
             autoHeight: true,
+            autoplay: true,
+            interval: 6000,
             rewind: true,
             pagination: false,
+            arrows: false,
         });
         splide.mount();
     });

@@ -382,7 +382,7 @@ a:active {
     top: 146px;
     left: 12vw;
     width: 75vw;
-    height: 415px;
+    height: 100vh;
     color: #141a20;
     background: rgba(255, 255, 255, 0.95);
     max-height: 0;
@@ -473,7 +473,6 @@ a:active {
     .dropdown-content-wrapper {
         width: 95vw;
         left: 2vw;
-        height: 100vh;
     }
 
     .dropdown-content-block {

@@ -72,7 +72,7 @@ a:active {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -90,7 +90,7 @@ a:active {
 }
 
 .epb-logo {
-    padding-bottom: 30px;
+    padding-bottom: 15px;
 }
 
 .epb-logo-img {

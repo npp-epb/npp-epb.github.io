@@ -6,13 +6,14 @@ if __name__ != '__main__':
 # Minify CSS
 from src.util import *
 
-main_min_css_path = 'static/main.min.css'
-main_css_path = 'static/main.css'
-main_min_css = minify_css(main_css_path)
+def minify(css_path: str, min_css_path: str) -> None:
+    min_css = minify_css(css_path)
+    if min_css:
+        with open(min_css_path, "w") as f:
+            f.write(min_css)
 
-if main_min_css:
-    with open(main_min_css_path, "w") as f:
-        f.write(main_min_css)
+minify('static/main.css', 'static/main.min.css')
+minify('static/legal.css', 'static/legal.min.css')
 
 # Evaluate Template
 from src.template_vars import *
@@ -25,9 +26,11 @@ def build_page(name: str) -> None:
     with open(f'{name}.html', "w", encoding='utf-8') as f:
         f.write(page)
 
-main_css = main_min_css_path if main_min_css else main_css_path
+main_css = 'static/main.min.css'
+legal_css = 'static/legal.min.css'
 
 env = Environment(loader=FileSystemLoader("./templates"), trim_blocks=True, lstrip_blocks=True)
 
 build_page("index")
+build_page("solutions")
 build_page("legal")

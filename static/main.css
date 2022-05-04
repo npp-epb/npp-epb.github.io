@@ -51,7 +51,7 @@ body {
     width: 70vw;
     margin: auto;
     text-align: justify;
-    padding-bottom: 430px;
+    padding-bottom: 400px;
 }
 
 a,
@@ -110,6 +110,11 @@ a:active {
 .heading-2 {
     font-size: 26pt;
     text-align: center;
+    padding: 30px 0;
+}
+
+.heading-3 {
+    font-size: 24pt;
     padding: 30px 0;
 }
 
@@ -535,9 +540,32 @@ a:active {
         margin-top: 50px;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links>div:first-child,
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links>div:nth-child(2) {
+    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links>div:first-child {
         margin-top: 0;
+    }
+
+    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links .dropdown {
+        display: block;
+    }
+
+    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links .dropdown span {
+        font-size: inherit;
+    }
+
+    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links .dropdown span::after {
+        content: revert;
+        position: revert;
+        right: revert;
+        top: revert;
+        margin-top: revert;
+        border-top: revert;
+        border-left: revert;
+        border-right: revert;
+        transition: revert;
+    }
+
+    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper {
+        height: 0;
     }
 
     .epb-logo {

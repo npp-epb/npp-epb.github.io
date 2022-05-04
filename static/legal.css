@@ -1,0 +1,7 @@
+@media (min-width: 858px) {
+    .footer-section {
+        width: 100vw;
+        position: fixed;
+        bottom: 0;
+    }
+}

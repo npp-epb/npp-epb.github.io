@@ -18,6 +18,7 @@ app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
 
 main_css = 'static/main.css'
+legal_css = 'static/legal.css'
 __file__dirname = os.path.dirname(os.path.realpath(__file__))
 
 def requires_password(route):
@@ -41,6 +42,11 @@ def index():
 @app.route('/legal')
 def legal():
     return render_template('legal.jinja', **globals())
+
+
+@app.route('/solutions')
+def solutions_():
+    return render_template('solutions.jinja', **globals())
 
 
 @app.route('/login', methods=['GET', 'POST'])

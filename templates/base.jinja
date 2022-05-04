@@ -19,12 +19,12 @@
             </label>
             <div class="navbar-links">
                 <div><a class="dropdown">
-                    <span style="cursor: pointer;" onclick="location.pathname='/solutions'">Решения</span>
+                    <span class="toggle" onclick="location.pathname='/solutions'">Решения</span>
                     <div class="dropdown-content-wrapper">
                         <div class="dropdown-content">
                             {% for title, description in solutions %}
                             <div class="dropdown-content-block">
-                                <div class="dropdown-content-heading">{{ title }}</div>
+                                <div class="dropdown-content-heading"><span style="cursor: pointer;" onclick="location.pathname='/solutions'">{{ title }}</span></div>
                                 <div class="dropdown-content-block-content">{{ description }}</div>
                             </div>
                             {% endfor %}

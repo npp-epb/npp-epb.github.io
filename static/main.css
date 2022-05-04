@@ -359,13 +359,13 @@ a:active {
     left: 50%;
 }
 
-.dropdown span {
+.dropdown .toggle {
     position: relative;
     font-size: 16px;
     white-space: nowrap;
 }
 
-.dropdown span:after {
+.dropdown .toggle:after {
     content: "";
     position: absolute;
     right: -12px;
@@ -402,7 +402,7 @@ a:active {
     flex-flow: row wrap;
     justify-content: space-between;
     gap: 30px 30px;
-    padding: 30px;
+    padding: 15px 20px;
 }
 
 .dropdown-content-block {
@@ -418,9 +418,13 @@ a:active {
     text-align: justify;
 }
 
-.navbar-links>div:hover .dropdown span:after {
+.navbar-links>div:hover .dropdown .toggle:after {
     transform: rotate(180deg);
     border-top: 3px solid #adb5bd;
+}
+
+.toggle {
+    cursor: pointer;
 }
 
 @keyframes slideY {

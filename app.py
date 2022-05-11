@@ -107,5 +107,6 @@ def edit_file(subpath: str):
 
 if __name__ == '__main__':
     main_css = 'static/main.min.css'
+    legal_css = 'static/legal.min.css'
     wsgi = WSGIServer(('0.0.0.0', int(os.environ.get('PORT'))), app)
     wsgi.serve_forever()

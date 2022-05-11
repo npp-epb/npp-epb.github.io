@@ -600,8 +600,19 @@ a:active {
 
     .clients {
         width: 100%;
-        justify-content: space-evenly;
-        gap: 50px;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .clients>div {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+    }
+
+    .client-img {
+        width: 80px;
+        height: 80px;
     }
 
     .yandex-maps-panel {

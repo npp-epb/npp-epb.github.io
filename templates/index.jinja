@@ -73,7 +73,9 @@
                             <div class="partners flex">
                                 {% for filename, title, description, link in slide %}
                                 <div class="partner">
+                                    {% if filename %}
                                     <a target="_blank" href="{{ link }}"><img src="static/i/partner/{{ filename }}"></a>
+                                    {% endif %}
                                     <div class="partner-info">
                                         <div class="partner-heading">{{ title }}</div>
                                         <div class="partner-description">{{ description }}</div>

@@ -195,6 +195,10 @@ a:active {
     animation: 0.8s alternate slideY;
 }
 
+.clients-section {
+    margin-top: 50px;
+}
+
 #expand-clients-checkbox:checked+.clients-section .clients .hidden-client {
     display: block;
 }

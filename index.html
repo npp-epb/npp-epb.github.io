@@ -46,18 +46,13 @@
                         </div>
                     </div>
                 </a></div>
-                <div><a href="/#clients"  onclick="follow_navbar_anchor();">Клиенты</a></div>
+                <div><a href="/#clients"  onclick="expand_clients(); follow_navbar_anchor();">Клиенты</a></div>
                 <div><a href="/#licenses" onclick="follow_navbar_anchor();">Лицензии</a></div>
                 <div><a href="/#partners" onclick="follow_navbar_anchor();">Партнеры</a></div>
                 <div><a href="/#contact"  onclick="follow_navbar_anchor();">Контакты</a></div>
             </div>
         </div>
     </section>
-
-    <div class="heading-2" id="clients">
-        Наши Клиенты
-    </div>
-
     <input id="expand-clients-checkbox" type="checkbox" />
     <section class="clients-section">
         <div class="clients">
@@ -983,13 +978,16 @@
         </div>
     </section>
     <script>
+        window.onload = function() {
+            document.getElementById('footer-year').innerText = new Date().getFullYear();
+        };
         function follow_navbar_anchor() {
             window['expand-navbar-checkbox'].checked = false;
             window['hamburger'].classList.remove('open');
         }
-        window.onload = function() {
-            document.getElementById('footer-year').innerText = new Date().getFullYear();
-        };
+        function expand_clients() {
+            document.getElementById('expand-clients-checkbox').checked = true;
+        }
     </script>
 </body>
 </html>

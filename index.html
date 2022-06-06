@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </a></div>
-                <div><a href="/#clients"  onclick="expand_clients(); follow_navbar_anchor();">Клиенты</a></div>
+                <div><a href="/#clients"  onclick="toggle_clients(); follow_navbar_anchor();">Клиенты</a></div>
                 <div><a href="/#licenses" onclick="follow_navbar_anchor();">Лицензии</a></div>
                 <div><a href="/#partners" onclick="follow_navbar_anchor();">Партнеры</a></div>
                 <div><a href="/#contact"  onclick="follow_navbar_anchor();">Контакты</a></div>
@@ -985,8 +985,9 @@
             window['expand-navbar-checkbox'].checked = false;
             window['hamburger'].classList.remove('open');
         }
-        function expand_clients() {
-            document.getElementById('expand-clients-checkbox').checked = true;
+        function toggle_clients() {
+            const checkbox = document.getElementById('expand-clients-checkbox');
+            checkbox.checked = !checkbox.checked;
         }
     </script>
 </body>

@@ -429,7 +429,7 @@ a:active {
 }
 
 .toggle {
-    cursor: pointer;
+    cursor: default;
 }
 
 @keyframes slideY {

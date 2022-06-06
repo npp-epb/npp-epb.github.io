@@ -519,12 +519,6 @@ a:active {
         padding-top: 20px;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section {
-        position: fixed;
-        z-index: 2;
-        background: #ffffff;
-    }
-
     #expand-navbar-checkbox:checked~.heading-2 {
         padding-top: 156px;
     }

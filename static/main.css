@@ -87,6 +87,7 @@ a:active {
     align-items: center;
     column-gap: 75px;
     margin-right: 10px;
+    font-size: 18px;
 }
 
 .epb-logo {
@@ -361,7 +362,7 @@ a:active {
 
 .dropdown .toggle {
     position: relative;
-    font-size: 16px;
+    font-size: 18px;
     white-space: nowrap;
 }
 

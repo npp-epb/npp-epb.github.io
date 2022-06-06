@@ -15,8 +15,8 @@
     <section class="navbar-section">
         <div class="navbar">
             <div class="epb-logo"><a href="/"><img class="epb-logo-img" src="static/i/epb-logo.jpg" /></a></div>
-            <label for="expand-navbar-checkbox" class="expand-navbar-label">
-                <div id="hamburger" onclick="this.classList.toggle('open');"><span></span><span></span><span></span><span></span></div>
+            <label for="expand-navbar-checkbox" class="expand-navbar-label" onclick="this.firstElementChild.classList.toggle('open');">
+                <div id="hamburger"><span></span><span></span><span></span><span></span></div>
             </label>
             <div class="navbar-links">
                 <div><a class="dropdown">

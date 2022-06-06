@@ -521,6 +521,7 @@ a:active {
 
     #expand-navbar-checkbox:checked+.navbar-section {
         position: fixed;
+        height: 100vh;
         z-index: 2;
         top: 0;
         left: 0;

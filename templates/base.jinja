@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,32 +10,35 @@
     {% block head %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
+
 <body>
     <input id="expand-navbar-checkbox" type="checkbox" />
     <section class="navbar-section">
         <div class="navbar">
             <div class="epb-logo"><a href="/"><img class="epb-logo-img" src="static/i/epb-logo.jpg" /></a></div>
-            <label for="expand-navbar-checkbox" class="expand-navbar-label" onclick="this.firstElementChild.classList.toggle('open');">
+            <label for="expand-navbar-checkbox" class="expand-navbar-label"
+                onclick="this.firstElementChild.classList.toggle('open');">
                 <div id="hamburger"><span></span><span></span><span></span><span></span></div>
             </label>
             <div class="navbar-links">
-                <div><a class="dropdown">
-                    <span class="toggle">Решения</span>
-                    <div class="dropdown-content-wrapper">
-                        <div class="dropdown-content">
-                            {% for title, description in solutions %}
-                            <div class="dropdown-content-block">
-                                <div class="dropdown-content-heading"><span style="cursor: pointer;" onclick="location.pathname='/solutions'">{{ title }}</span></div>
-                                <div class="dropdown-content-block-content">{{ description }}</div>
+                <div><a id="solutions-dropdown" class="dropdown">
+                        <span class="toggle">Решения</span>
+                        <div class="dropdown-content-wrapper">
+                            <div class="dropdown-content">
+                                {% for title, description in solutions %}
+                                <div class="dropdown-content-block">
+                                    <div class="dropdown-content-heading"><span style="cursor: pointer;"
+                                            onclick="location.pathname='/solutions'">{{ title }}</span></div>
+                                    <div class="dropdown-content-block-content">{{ description }}</div>
+                                </div>
+                                {% endfor %}
                             </div>
-                            {% endfor %}
                         </div>
-                    </div>
-                </a></div>
-                <div><a href="/#clients"  onclick="toggle_clients(); follow_navbar_anchor();">Клиенты</a></div>
+                    </a></div>
+                <div><a href="/#clients" onclick="toggle_clients(); follow_navbar_anchor();">Клиенты</a></div>
                 <div><a href="/#licenses" onclick="follow_navbar_anchor();">Лицензии</a></div>
                 <div><a href="/#partners" onclick="follow_navbar_anchor();">Партнеры</a></div>
-                <div><a href="/#contact"  onclick="follow_navbar_anchor();">Контакты</a></div>
+                <div><a href="/#contact" onclick="follow_navbar_anchor();">Контакты</a></div>
             </div>
         </div>
     </section>
@@ -42,7 +46,8 @@
     <section class="footer-section">
         <div class="footer-content">
             <div class="years">
-                &#169; 2013–<span id="footer-year">2022</span> ЗАО НПП "ЭПБ"<span style="color: #6c757d"><a href="/legal">
+                &#169; 2013–<span id="footer-year">2022</span> ЗАО НПП "ЭПБ"<span style="color: #6c757d"><a
+                        href="/legal">
                         Правовая
                         информация</a></span>
             </div>
@@ -54,17 +59,37 @@
         </div>
     </section>
     <script>
-        window.onload = function() {
-            document.getElementById('footer-year').innerText = new Date().getFullYear();
-        };
+        var resize_timer = 0;
         function follow_navbar_anchor() {
-            window['expand-navbar-checkbox'].checked = false;
-            window['hamburger'].classList.remove('open');
+            const expand_navbar_checkbox = document.getElementById('expand-navbar-checkbox');
+            const hamburger = document.getElementById('hamburger');
+            expand_navbar_checkbox.checked = false;
+            hamburger.classList.remove('open');
         }
         function toggle_clients() {
             const checkbox = document.getElementById('expand-clients-checkbox');
             checkbox.checked = !checkbox.checked;
         }
+        function on_load() {
+            const footer_year = document.getElementById('footer-year');
+            footer_year.innerText = new Date().getFullYear();
+            if (window.matchMedia('(max-width: 858px)').matches)
+                document.getElementById('solutions-dropdown').href = '/solutions';
+        }
+        function do_resize() {
+            const solutions_dropdown = document.getElementById('solutions-dropdown');
+            if (window.matchMedia('(max-width: 858px)').matches)
+                solutions_dropdown.href = '/solutions';
+            else
+                solutions_dropdown.removeAttribute('href');
+        }
+        function on_resize() {
+            clearTimeout(resize_timer);
+            resize_timer = setTimeout(do_resize, 500);
+        }
+        window.addEventListener('load', on_load);
+        window.addEventListener('resize', on_resize);
     </script>
 </body>
+
 </html>

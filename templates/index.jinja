@@ -129,10 +129,11 @@
     <script>
         var resize_timer = 0;
         function do_resize() {
+            const yandex_maps = document.getElementById('yandex-maps');
             if (!window.matchMedia("(max-width: 858px)").matches)
-                window['yandex-maps'].src = "https://yandex.ru/map-widget/v1/-/CCU5ZHEv8C";
+                yandex_maps.src = "https://yandex.ru/map-widget/v1/-/CCU5ZHEv8C";
             else
-                window['yandex-maps'].src = "";
+                yandex_maps.src = "";
         }
         function on_resize() {
             clearTimeout(resize_timer);

@@ -416,6 +416,7 @@ a:active {
 
 .dropdown-content-heading {
     font-size: 16pt;
+    font-weight: bold;
     text-align: left;
 }
 

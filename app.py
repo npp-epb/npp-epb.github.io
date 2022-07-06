@@ -55,7 +55,7 @@ def login():
     elif request.method == 'POST':
         if request.form.get('pw') == password:
             response = make_response(redirect('/files'))
-            response.set_cookie('pw', password)
+            response.set_cookie('pw', password, secure=True)
             return response
     abort(400)
 

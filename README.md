@@ -1,13 +1,12 @@
 # npp-epb
 
-## Install Jinja2
+## Static Page Build
 
     pip3 install Jinja2
-
-## Build
-
     python build.py
+    chrome.exe index.html
 
-## Run
+## Hot Reloading Support
 
-    iexplore.exe index.html
+    pip3 install -r requirements.txt
+    watchmedo auto-restart -p "*.py" -R python -- app.py

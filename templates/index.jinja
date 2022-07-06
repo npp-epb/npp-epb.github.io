@@ -1,7 +1,7 @@
 {% extends "base.jinja" %}
 
 {% block head %}
-<link rel="stylesheet" href="static/splide/splide.min.css">
+<link rel="stylesheet" href="static/glide/glide.core.min.css">
 {% endblock %}
 
 {% block title %}
@@ -60,11 +60,11 @@
             Наши Партнеры
         </div>
 
-        <div class="splide" style="margin: auto;">
-            <div class="splide__track">
-                <ul class="splide__list">
+        <div class="glide" style="margin: auto;">
+            <div data-glide-el="track" class="glide__track">
+                <ul class="glide__slides">
                     {% for slide in partners_slides %}
-                        <div class="splide__slide">
+                        <div class="glide__slide">
                             <div class="partners flex">
                                 {% for filename, title, description, link in slide %}
                                 <div class="partner">
@@ -143,19 +143,10 @@
         window.addEventListener('resize', on_resize);
     </script>
 
-    <script src="static/splide/splide.min.js"></script>
+    <script src="static/glide/glide.min.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var splide = new Splide('.splide', {
-            width: '95vw',
-            autoHeight: true,
-            autoplay: true,
-            interval: 10000,
-            rewind: true,
-            pagination: false,
-            arrows: false,
-        });
-        splide.mount();
-    });
+        new Glide('.glide', {
+            autoplay: 5000,
+        }).mount();
     </script>
 {% endblock %}

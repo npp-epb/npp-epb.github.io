@@ -9,8 +9,7 @@ from gevent.pywsgi import WSGIServer
 from src.util import *
 from src.template_vars import *
 
-pw = os.environ.get('password')
-assert(pw)
+password = os.environ.get('password')
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
@@ -24,7 +23,7 @@ __file__dirname = os.path.dirname(os.path.realpath(__file__))
 def requires_password(route):
     @wraps(route)
     def wrapper(*args, **kwargs):
-        if request.cookies.get('pw') != pw:
+        if request.cookies.get('pw') != password:
             return redirect('/login')
         return route(*args, **kwargs)
     return wrapper
@@ -54,10 +53,9 @@ def login():
     if request.method == 'GET':
         return render_template('login.jinja')
     elif request.method == 'POST':
-        password = request.form.get('pw')
-        if password == pw:
+        if request.form.get('pw') == password:
             response = make_response(redirect('/files'))
-            response.set_cookie('pw', pw)
+            response.set_cookie('pw', password)
             return response
     abort(400)
 
@@ -106,7 +104,12 @@ def edit_file(subpath: str):
 
 
 if __name__ == '__main__':
+    assert(os.environ.get('password', None) is not None)
     main_css = 'static/main.min.css'
     legal_css = 'static/legal.min.css'
     wsgi = WSGIServer(('0.0.0.0', int(os.environ.get('PORT'))), app)
     wsgi.serve_forever()
+else:
+    # DEBUG
+    if not password:
+        password = 'admin'

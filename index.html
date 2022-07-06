@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="static/i/favicon.ico">
     <link rel="stylesheet" href="static/main.min.css">
-<link rel="stylesheet" href="static/splide/splide.min.css">
+<link rel="stylesheet" href="static/glide/glide.core.min.css">
     <title>Эксперт по безопасности
 </title>
 </head>
@@ -798,10 +798,10 @@
             Наши Партнеры
         </div>
 
-        <div class="splide" style="margin: auto;">
-            <div class="splide__track">
-                <ul class="splide__list">
-                        <div class="splide__slide">
+        <div class="glide" style="margin: auto;">
+            <div data-glide-el="track" class="glide__track">
+                <ul class="glide__slides">
+                        <div class="glide__slide">
                             <div class="partners flex">
                                 <div class="partner">
                                     <a target="_blank" href="https://www.securitycode.ru/"><img src="static/i/partner/ООО Код безопасности.svg"></a>
@@ -833,7 +833,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="splide__slide">
+                        <div class="glide__slide">
                             <div class="partners flex">
                                 <div class="partner">
                                     <a target="_blank" href="https://www.altx-soft.ru/"><img src="static/i/partner/logo_rus_altx_white.svg"></a>
@@ -865,7 +865,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="splide__slide">
+                        <div class="glide__slide">
                             <div class="partners flex">
                                 <div class="partner">
                                     <a target="_blank" href="https://www.drweb.ru/"><img src="static/i/partner/drweb.png"></a>
@@ -957,20 +957,11 @@
         window.addEventListener('resize', on_resize);
     </script>
 
-    <script src="static/splide/splide.min.js"></script>
+    <script src="static/glide/glide.min.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var splide = new Splide('.splide', {
-            width: '95vw',
-            autoHeight: true,
-            autoplay: true,
-            interval: 10000,
-            rewind: true,
-            pagination: false,
-            arrows: false,
-        });
-        splide.mount();
-    });
+        new Glide('.glide', {
+            autoplay: 5000,
+        }).mount();
     </script>
     <section class="footer-section">
         <div class="footer-content">

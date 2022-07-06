@@ -420,6 +420,15 @@ a:active {
     text-align: left;
 }
 
+.dropdown-content-heading-text {
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.dropdown-content-heading-text:hover {
+    color: rgb(125, 125, 125);
+}
+
 .dropdown-content-block-content {
     margin-top: 5px;
     text-align: justify;

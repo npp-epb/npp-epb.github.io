@@ -2,7 +2,7 @@
 
 ## Static Page Build
 
-    pip3 install Jinja2
+    python3 -m pip install Jinja2
     python3 build.py
     chrome.exe index.html
 

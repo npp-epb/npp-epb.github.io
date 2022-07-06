@@ -127,20 +127,20 @@
         </div>
     </section>
     <script>
-        var resize_timer = 0;
-        function do_resize() {
+        var index_resize_timer = 0;
+        function index_do_resize() {
             const yandex_maps = document.getElementById('yandex-maps');
             if (!window.matchMedia("(max-width: 858px)").matches)
                 yandex_maps.src = "https://yandex.ru/map-widget/v1/-/CCU5ZHEv8C";
             else
                 yandex_maps.src = "";
         }
-        function on_resize() {
-            clearTimeout(resize_timer);
-            resize_timer = setTimeout(do_resize, 500);
+        function index_on_resize() {
+            clearTimeout(index_resize_timer);
+            index_resize_timer = setTimeout(index_do_resize, 500);
         }
-        window.addEventListener('load', do_resize);
-        window.addEventListener('resize', on_resize);
+        window.addEventListener('load', index_do_resize);
+        window.addEventListener('resize', index_on_resize);
     </script>
 
     <script src="static/glide/glide.min.js"></script>

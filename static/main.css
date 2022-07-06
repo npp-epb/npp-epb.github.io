@@ -406,7 +406,7 @@ a:active {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    gap: 30px 30px;
+    row-gap: 30px;
     padding: 15px 20px;
 }
 
@@ -421,6 +421,7 @@ a:active {
 }
 
 .dropdown-content-block-content {
+    margin-top: 5px;
     text-align: justify;
 }
 

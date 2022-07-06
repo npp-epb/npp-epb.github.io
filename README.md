@@ -3,7 +3,7 @@
 ## Static Page Build
 
     pip3 install Jinja2
-    python build.py
+    python3 build.py
     chrome.exe index.html
 
 ## Hot Reloading Support

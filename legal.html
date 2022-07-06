@@ -89,7 +89,7 @@
         </div>
     </section>
     <script>
-        var resize_timer = 0;
+        var base_resize_timer = 0;
         function follow_navbar_anchor() {
             const expand_navbar_checkbox = document.getElementById('expand-navbar-checkbox');
             const hamburger = document.getElementById('hamburger');
@@ -100,25 +100,25 @@
             const checkbox = document.getElementById('expand-clients-checkbox');
             checkbox.checked = !checkbox.checked;
         }
-        function on_load() {
+        function base_on_load() {
             const footer_year = document.getElementById('footer-year');
             footer_year.innerText = new Date().getFullYear();
             if (window.matchMedia('(max-width: 858px)').matches)
                 document.getElementById('solutions-dropdown').href = '/solutions';
         }
-        function do_resize() {
+        function base_do_resize() {
             const solutions_dropdown = document.getElementById('solutions-dropdown');
             if (window.matchMedia('(max-width: 858px)').matches)
                 solutions_dropdown.href = '/solutions';
             else
                 solutions_dropdown.removeAttribute('href');
         }
-        function on_resize() {
-            clearTimeout(resize_timer);
-            resize_timer = setTimeout(do_resize, 500);
+        function base_on_resize() {
+            clearTimeout(base_resize_timer);
+            base_resize_timer = setTimeout(base_do_resize, 500);
         }
-        window.addEventListener('load', on_load);
-        window.addEventListener('resize', on_resize);
+        window.addEventListener('load', base_on_load);
+        window.addEventListener('resize', base_on_resize);
     </script>
 </body>
 

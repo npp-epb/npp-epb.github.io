@@ -9,4 +9,4 @@
 ## Hot Reloading Support
 
     pip3 install -r requirements.txt
-    watchmedo auto-restart -p "*.py" -R python -- app.py
+    watchmedo auto-restart -p "*.py" -R python3 -- app.py

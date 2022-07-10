@@ -4,11 +4,30 @@
 <link rel="stylesheet" href="static/glide/glide.core.min.css">
 {% endblock %}
 
-{% block title %}
-Эксперт по безопасности
-{% endblock %}
+{% block title %}Эксперт по безопасности{% endblock %}
 
 {% block content %}
+    <section class="solutions-section" id="solutions">
+        <div class="solutions">
+            <div class="solutions-glide" style="margin: auto;">
+                <div data-glide-el="track" class="glide__track">
+                    <ul class="glide__slides">
+                        {% for filename, title, description, link in solutions_slides %}
+                            <div class="glide__slide">
+                                <div class="solution-slide" style="background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/static/i/solution/{{ filename }}') no-repeat">
+                                    <div class="solution-slide-wrapper">
+                                        <div class="solution-title">{{ title }}</div>
+                                        <div class="solution-description">{{ description }}</div>
+                                        <div class="solution-link"><a href="{{ link }}">Подробнее</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
     <input id="expand-clients-checkbox" type="checkbox" />
     <section class="clients-section">
         <div class="clients">
@@ -57,10 +76,10 @@
 
     <section class="partners-section" id="partners">
         <div class="heading-2">
-            Наши Партнеры
+            Наши Партнёры
         </div>
 
-        <div class="glide" style="margin: auto;">
+        <div class="partners-glide" style="margin: auto;">
             <div data-glide-el="track" class="glide__track">
                 <ul class="glide__slides">
                     {% for slide in partners_slides %}
@@ -145,7 +164,10 @@
 
     <script src="static/glide/glide.min.js"></script>
     <script>
-        new Glide('.glide', {
+        new Glide('.solutions-glide', {
+            autoplay: 5000,
+        }).mount();
+        new Glide('.partners-glide', {
             autoplay: 5000,
         }).mount();
     </script>

@@ -31,20 +31,11 @@
     <input id="expand-clients-checkbox" type="checkbox" />
     <section class="clients-section">
         <div class="clients">
-            {% set max_shown_clients = 8 %}
             {% for filename, description, link in clients %}
-                {% if loop.index > max_shown_clients %}
-                <div class="hidden-client">
-                {% else %}
                 <div>
-                {% endif %}
                     <a target="_blank" href="{{ link }}" title="{{ description }}">
                         <div class="client-img">
-                            {% if loop.index > max_shown_clients %}
-                            <img src="static/i/client/{{ filename }}" loading="lazy" />
-                            {% else %}
                             <img src="static/i/client/{{ filename }}" />
-                            {% endif %}
                         </div>
                     </a>
                 </div>

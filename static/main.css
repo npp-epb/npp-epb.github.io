@@ -206,11 +206,14 @@ a:active {
 
 .clients {
     width: 75vw;
+    max-height: 100px;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, 100px);
     justify-content: space-around;
     gap: 75px;
+    overflow: hidden;
+    animation: 0.8s alternate slideY;
 }
 
 .clients>div {
@@ -249,17 +252,12 @@ a:active {
     display: none;
 }
 
-.hidden-client {
-    display: none;
-    animation: 0.8s alternate slideY;
-}
-
 .clients-section {
     margin-top: 50px;
 }
 
-#expand-clients-checkbox:checked+.clients-section .clients .hidden-client {
-    display: block;
+#expand-clients-checkbox:checked+.clients-section .clients {
+    max-height: unset;
 }
 
 #expand-clients-checkbox:checked~.expand-clients-label .triangle-down {
@@ -700,8 +698,9 @@ a:active {
 
     .clients {
         width: 100%;
+        max-height: 200px;
         justify-content: center;
-        gap: 30px;
+        gap: 20px;
     }
 
     .clients>div {

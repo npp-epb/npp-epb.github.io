@@ -14,7 +14,7 @@
                     <ul class="glide__slides">
                         {% for filename, title, description, link in solutions_slides %}
                             <div class="glide__slide">
-                                <div class="solution-slide" style="background:linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/static/i/solution/{{ filename }}') no-repeat;background-color:#000;">
+                                <div class="solution-slide" style="background:linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('static/i/solution/{{ filename }}') no-repeat;background-color:#000;">
                                     <div class="solution-slide-wrapper">
                                         <div class="solution-title">{{ title }}</div>
                                         <div class="solution-description">{{ description }}</div>

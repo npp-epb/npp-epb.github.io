@@ -679,6 +679,7 @@ a:active {
         height: 250px;
         padding: 20px 30px;
         border-radius: 15px;
+        background-size: unset !important;
     }
 
     .solution-title {

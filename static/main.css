@@ -527,11 +527,13 @@ a:active {
 @font-face {
     font-family: Normalidad;
     src: url("/static/f/NormalidadText-Medium.woff2") format("woff2");
+    font-weight: 600;
 }
 
 @font-face {
     font-family: Normalidad;
     src: url("/static/f/NormalidadText-Regular.woff2") format("woff2");
+    font-weight: 400;
 }
 
 @media (max-width: 1300px) {

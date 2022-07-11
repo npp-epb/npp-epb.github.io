@@ -178,7 +178,7 @@ a:active {
     top: 0;
     left: 0;
     font-size: 32pt;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .solution-description {
@@ -300,7 +300,7 @@ a:active {
 }
 
 .partner-heading {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .partner-description {
@@ -473,7 +473,7 @@ a:active {
 
 .dropdown-content-heading {
     font-size: 16pt;
-    font-weight: bold;
+    font-weight: 600;
     text-align: left;
 }
 

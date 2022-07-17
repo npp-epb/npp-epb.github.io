@@ -14,11 +14,14 @@
                     <ul class="glide__slides">
                         {% for filename, title, description, link in solutions_slides %}
                             <div class="glide__slide">
-                                <div class="solution-slide" style="background:linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('static/i/solution/{{ filename }}') no-repeat;background-color:#000;">
+                                <div class="solution-slide" style="background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('static/i/solution/{{ filename }}') no-repeat;background-color:#000;">
                                     <div class="solution-slide-wrapper">
                                         <div class="solution-title">{{ title }}</div>
                                         <div class="solution-description">{{ description }}</div>
-                                        <div class="solution-link"><a href="{{ link }}">Подробнее</a></div>
+                                        <div class="solution-links">
+                                            <a href="{{ link }}"><div class="solution-link">ПОДРОБНЕЕ</div></a>
+                                            <a href="{{ link }}"><div class="solution-link">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</div></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -139,10 +142,10 @@
     <script src="static/glide/glide.min.js"></script>
     <script>
         new Glide('.solutions-glide', {
-            autoplay: 10000,
+            autoplay: 7000,
         }).mount();
         new Glide('.partners-glide', {
-            autoplay: 7500,
+            autoplay: 8000,
         }).mount();
     </script>
 {% endblock %}

@@ -700,11 +700,6 @@ a:active {
         font-size: 11pt;
     }
 
-    .solution-links {
-        justify-content: flex-start;
-        column-gap: 20px;
-    }
-
     .solution-link {
         width: 110px;
         height: 30px;

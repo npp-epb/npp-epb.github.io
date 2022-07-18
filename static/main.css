@@ -7,7 +7,7 @@ body {
     padding: 0;
     margin: auto;
     color: #141a20;
-    font-family: Normalidad, Tahoma, Verdana, Arial, Helvetica;
+    font-family: Tahoma, Verdana, Arial, Helvetica;
     overflow-x: hidden;
 }
 
@@ -521,18 +521,6 @@ a:active {
         opacity: 1;
         transform: translateX(0);
     }
-}
-
-@font-face {
-    font-family: Normalidad;
-    src: url("/static/f/NormalidadText-Medium.woff2") format("woff2");
-    font-weight: 600;
-}
-
-@font-face {
-    font-family: Normalidad;
-    src: url("/static/f/NormalidadText-Regular.woff2") format("woff2");
-    font-weight: 400;
 }
 
 @media (max-width: 1300px) {

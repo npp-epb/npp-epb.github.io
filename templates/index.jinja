@@ -14,7 +14,7 @@
                     <ul class="glide__slides">
                         {% for filename, title, description, link in solutions_slides %}
                             <div class="glide__slide">
-                                <div class="solution-slide" style="background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('static/i/solution/{{ filename }}') no-repeat;background-color:#000;">
+                                <div class="solution-slide" style="background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('static/i/solution/{{ filename }}') no-repeat;background-color:#000;background-size:cover;">
                                     <div class="solution-slide-wrapper">
                                         <div class="solution-title">{{ title }}</div>
                                         <div class="solution-description">{{ description }}</div>
@@ -49,6 +49,25 @@
     <label class="expand-clients-label" for="expand-clients-checkbox">
         <div class="triangle-down"></div>
     </label>
+
+    <section class="solutions-blocks-section">
+        <div class="main-heading">
+            Решения
+        </div>
+        <div class="solution-blocks">
+        {% for filename, title, description, link in solutions_blocks %}
+        <div class="solution-block" style="background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('static/i/solution-block/{{ filename }}') no-repeat;background-color:#000;background-size:cover;">
+            <div class="solution-block-wrapper">
+                <div class="solution-block-title">{{ title }}</div>
+                <div class="solution-block-description">{{ description }}</div>
+                <div class="solution-block-links">
+                    <a href="{{ link }}"><div class="solution-block-link">ПОДРОБНЕЕ</div></a>
+                    <a href="{{ link }}"><div class="solution-block-link">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</div></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
 
     <section class="licenses-section" id="licenses">
         <div class="main-heading">

@@ -35,8 +35,8 @@ ul {
     margin-top: 50px;
 }
 
-.licenses-section {
-    background-color: #f8f9fa;
+.solutions-blocks-section {
+    background-color: #ffffff;
     padding-bottom: 50px;
 }
 
@@ -143,6 +143,77 @@ a:active {
 
 .text-nowrap {
     white-space: nowrap;
+}
+
+.solution-blocks {
+    width: 75vw;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 16px;
+}
+
+.solution-block-wrapper {
+    position: relative;
+    height: 100%;
+}
+
+.solution-block {
+    position: relative;
+    width: 420px;
+    height: 240px;
+    border-radius: 24px;
+    padding: 20px;
+    background: #f1f2f3;
+    color: #ffffff;
+    transition: .3s ease;
+}
+
+.solution-block:hover {
+    background: #e9ecef;
+}
+
+.solution-block:hover .solution-block-links {
+    opacity: 1;
+}
+
+.solution-block-title {
+    font-weight: 600;
+    font-size: 16pt;
+}
+
+.solution-block-description {
+    margin-top: 10px;
+}
+
+.solution-block-links {
+    opacity: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: .3s ease;
+}
+
+.solution-block-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    height: 30px;
+    border: 2px solid rgba(50, 50, 50, 0.5);
+    background: rgba(50, 50, 50, 0.9);
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
+    font-size: 10pt;
+    transition: .3s ease;
+}
+
+.solution-block-link:hover {
+    color: rgb(220, 220, 220);
 }
 
 .licenses {
@@ -558,11 +629,19 @@ a:active {
         margin-top: 20px;
     }
 
+    .solution-blocks {
+        width: 90vw;
+    }
+
     .contact-section {
         padding-top: 0;
     }
 
     .legal-section {
+        width: 90vw;
+    }
+
+    .main-heading {
         width: 90vw;
     }
 
@@ -651,6 +730,7 @@ a:active {
         width: unset;
         height: unset;
         background: unset;
+        transition: max-height 0.25s;
     }
 
     #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper .dropdown-content-heading-text {
@@ -709,25 +789,40 @@ a:active {
         background-size: unset !important;
     }
 
-    .solution-slide ul {
+    .solution-slide ul, .solution-block ul {
         padding-inline-start: 15px;
     }
 
-    .solution-slide li:not(:last-child) {
+    .solution-slide li:not(:last-child), .solution-block li:not(:last-child) {
         margin-bottom: 5px;
     }
 
     .solution-title {
         font-size: 14pt;
     }
-
+    
     .solution-description {
         width: 100%;
         margin-top: 10px;
         font-size: 11pt;
     }
 
-    .solution-link {
+    .solution-block {
+        border-radius: 15px;
+        padding: 14px;
+    }
+
+    .solution-block-title {
+        font-size: 10pt;
+    }
+
+    .solution-block-description {
+        width: 100%;
+        margin-top: 5px;
+        font-size: 9pt;
+    }
+
+    .solution-link, .solution-block-link {
         width: 110px;
         height: 30px;
         font-size: 10pt;

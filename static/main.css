@@ -77,7 +77,7 @@ a:active {
     text-decoration: none;
 }
 
-#expand-navbar-checkbox, .expand-navbar-label {
+#expand-navbar-checkbox, #navbar-solutions-checkbox, .expand-navbar-label {
     display: none;
 }
 
@@ -279,7 +279,7 @@ a:active {
     margin-top: 50px;
 }
 
-#expand-clients-checkbox:checked+.clients-section .clients {
+#expand-clients-checkbox:checked~.clients-section .clients {
     max-height: unset;
 }
 
@@ -448,19 +448,19 @@ a:active {
 
 .dropdown-content-wrapper {
     position: absolute;
-    top: 116px;
+    top: 112px;
     left: 0;
     width: 100vw;
-    height: calc(100vh - 116px);
+    height: calc(850px - 116px);
     color: #141a20;
-    background: rgba(250, 250, 250, 0.94);
+    background: rgba(250, 250, 250, 0.97);
     max-height: 0;
-    transition: max-height 0.5s 0.5s;
+    transition: max-height 0.5s 0s;
     z-index: 1;
     overflow: hidden;
 }
 
-.navbar-links>div:hover .dropdown .dropdown-content-wrapper {
+#navbar-solutions-checkbox:checked~.navbar-section .dropdown .dropdown-content-wrapper {
     max-height: 100%;
     transition: max-height 0.5s;
 }
@@ -498,7 +498,7 @@ a:active {
     text-align: justify;
 }
 
-.navbar-links>div:hover .dropdown .toggle:after {
+#navbar-solutions-checkbox:checked~.navbar-section .dropdown .toggle:after {
     transform: rotate(180deg);
     border-top: 3px solid #adb5bd;
 }
@@ -554,6 +554,10 @@ a:active {
         width: 100vw;
     }
 
+    .solutions-section {
+        margin-top: 20px;
+    }
+
     .contact-section {
         padding-top: 0;
     }
@@ -585,7 +589,7 @@ a:active {
         padding-top: 20px;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section {
+    #expand-navbar-checkbox:checked~.navbar-section {
         position: fixed;
         height: 100vh;
         z-index: 2;
@@ -598,7 +602,7 @@ a:active {
         padding-top: 156px;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links {
+    #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links {
         display: block;
         position: fixed;
         height: 100vh;
@@ -611,26 +615,26 @@ a:active {
         background: #eeeeee;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links>div {
+    #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links>div {
         display: flex;
         justify-content: center;
         margin-top: 50px;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links>div:first-child {
+    #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links>div:first-child {
         margin-top: 0;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links .dropdown {
+    #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links .dropdown {
         display: block;
         text-align: center;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links .dropdown span {
+    #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links .dropdown span {
         font-size: inherit;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links .dropdown span::after {
+    #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links .dropdown span::after {
         content: revert;
         position: revert;
         right: revert;
@@ -642,32 +646,32 @@ a:active {
         transition: revert;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper {
+    #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper {
         position: static;
         width: unset;
         height: unset;
         background: unset;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper .dropdown-content-heading-text {
+    #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper .dropdown-content-heading-text {
         font-size: 14pt;
         font-weight: normal;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper .dropdown-content-heading {
+    #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper .dropdown-content-heading {
         text-align: center;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper .dropdown-content {
+    #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper .dropdown-content {
         margin-top: 20px;
         padding: 10px 20px;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper .dropdown-content-block {
+    #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper .dropdown-content-block {
         width: 100%;
     }
 
-    #expand-navbar-checkbox:checked+.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper .dropdown-content-block-content {
+    #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper .dropdown-content-block-content {
         display: none;
     }
 

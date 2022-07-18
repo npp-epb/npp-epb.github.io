@@ -13,6 +13,7 @@
 
 <body>
     <input id="expand-navbar-checkbox" type="checkbox" />
+    <input id="navbar-solutions-checkbox" type="checkbox" />
     <section class="navbar-section">
         <div class="navbar">
             <div class="epb-logo"><a href="/"><img class="epb-logo-img" src="static/i/epb-logo.jpg" /></a></div>
@@ -22,7 +23,9 @@
             </label>
             <div class="navbar-links">
                 <div><a id="solutions-dropdown" class="dropdown">
-                        <span class="toggle">Решения</span>
+                        <label for="navbar-solutions-checkbox">
+                            <span class="toggle">Решения</span>
+                        </label>
                         <div class="dropdown-content-wrapper">
                             <div class="dropdown-content">
                                 <div class="dropdown-content-block">
@@ -155,7 +158,12 @@
             const footer_year = document.getElementById('footer-year');
             footer_year.innerText = new Date().getFullYear();
         }
+        function base_on_scroll() {
+            const navbar_solutions_checkbox = document.getElementById('navbar-solutions-checkbox');
+            navbar_solutions_checkbox.checked = false;
+        }
         window.addEventListener('load', base_on_load);
+        window.addEventListener('scroll', base_on_scroll);
     </script>
 </body>
 

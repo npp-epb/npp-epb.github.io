@@ -154,22 +154,8 @@
         function base_on_load() {
             const footer_year = document.getElementById('footer-year');
             footer_year.innerText = new Date().getFullYear();
-            if (window.matchMedia('(max-width: 858px)').matches)
-                document.getElementById('solutions-dropdown').href = '/solutions';
-        }
-        function base_do_resize() {
-            const solutions_dropdown = document.getElementById('solutions-dropdown');
-            if (window.matchMedia('(max-width: 858px)').matches)
-                solutions_dropdown.href = '/solutions';
-            else
-                solutions_dropdown.removeAttribute('href');
-        }
-        function base_on_resize() {
-            clearTimeout(base_resize_timer);
-            base_resize_timer = setTimeout(base_do_resize, 500);
         }
         window.addEventListener('load', base_on_load);
-        window.addEventListener('resize', base_on_resize);
     </script>
 </body>
 

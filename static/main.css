@@ -859,10 +859,15 @@ a:active {
         height: 80px;
     }
 
+    .yandex-maps-panel-heading {
+        text-align: left;
+    }
+
     .yandex-maps-panel {
-        right: 0;
+        position: static;
         width: 90vw;
-        padding: 30px 30px 0 30px;
+        text-align: left;
+        padding: 30px;
     }
 
     .partners {

@@ -1001,28 +1001,14 @@
                     <a href="mailto:info@npp-epb.ru">info@npp-epb.ru</a>
                 </div>
             </div>
-            <iframe id="yandex-maps" height="500" frameborder="0" allowfullscreen="true" style="position:relative; width: 100%;"></iframe>
+            <iframe id="yandex-maps" src="https://yandex.ru/map-widget/v1/-/CCURE6GY8D" height="500" frameborder="0" allowfullscreen="true" style="position:relative; width: 100%;"></iframe>
         </div>
     </section>
     <script>
-        var index_resize_timer = 0;
         function set_yandex_maps_url(url) {
             const yandex_maps = document.getElementById('yandex-maps');
             yandex_maps.src = `https://yandex.ru/map-widget/v1/-/${url}`;
         }
-        function index_do_resize() {
-            const yandex_maps = document.getElementById('yandex-maps');
-            if (!window.matchMedia("(max-width: 858px)").matches)
-                yandex_maps.src = "https://yandex.ru/map-widget/v1/-/CCURE6GY8D";
-            else
-                yandex_maps.src = "";
-        }
-        function index_on_resize() {
-            clearTimeout(index_resize_timer);
-            index_resize_timer = setTimeout(index_do_resize, 500);
-        }
-        window.addEventListener('load', index_do_resize);
-        window.addEventListener('resize', index_on_resize);
     </script>
     <script src="static/glide/glide.min.js"></script>
     <script>

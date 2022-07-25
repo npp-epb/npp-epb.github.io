@@ -889,7 +889,7 @@
                                     </div>
                                 </div>
                                 <div class="partner">
-                                    <a target="_blank" href="https://www.kaspersky.ru/"><img src="static/i/partner/АО Лаборатория Касперского.png"></a>
+                                    <a target="_blank" href="https://www.kaspersky.ru/"><img src="static/i/partner/АО Лаборатория Касперского.svg"></a>
                                     <div class="partner-info">
                                         <div class="partner-heading">Лаборатория Касперского</div>
                                         <div class="partner-description">«Лаборатория Касперского» основана в 1997 году. На сегодняшний день является крупнейшей в мире частной компанией, занимающейся разработкой защитных решений.</div>
@@ -983,12 +983,12 @@
                 <div class="yandex-maps-panel-heading">
                     Контакты
                 </div>
-                <div>
+                <div class="change-yandex-maps" onclick="set_yandex_maps_url('CCURE6GY8D')">
                     Главный офис:
                     <br>
                     127018, Москва, ул.Октябрьская, д.38, корп. 1
                 </div>
-                <div>
+                <div class="change-yandex-maps" onclick="set_yandex_maps_url('CCURECfcCB')">
                     Дополнительный офис:
                     <br>
                     107023, Москва, ул.Электрозаводская, д.24, стр. 1
@@ -1004,10 +1004,14 @@
     </section>
     <script>
         var index_resize_timer = 0;
+        function set_yandex_maps_url(url) {
+            const yandex_maps = document.getElementById('yandex-maps');
+            yandex_maps.src = `https://yandex.ru/map-widget/v1/-/${url}`;
+        }
         function index_do_resize() {
             const yandex_maps = document.getElementById('yandex-maps');
             if (!window.matchMedia("(max-width: 858px)").matches)
-                yandex_maps.src = "https://yandex.ru/map-widget/v1/-/CCU5ZHEv8C";
+                yandex_maps.src = "https://yandex.ru/map-widget/v1/-/CCURE6GY8D";
             else
                 yandex_maps.src = "";
         }

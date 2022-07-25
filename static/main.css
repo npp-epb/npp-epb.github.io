@@ -437,6 +437,15 @@ a:active {
     margin-top: 0;
 }
 
+.change-yandex-maps {
+    transition: color .3s ease;
+    cursor: pointer;
+}
+
+.change-yandex-maps:hover {
+    color: rgb(170, 170, 170);
+}
+
 .footer-content {
     width: 75vw;
     margin: auto;

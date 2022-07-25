@@ -1,7 +1,5 @@
-@media (max-width: 1100px) {
-    .footer-section {
-        width: 100vw;
-        position: fixed;
-        bottom: 0;
-    }
+.footer-section {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
 }

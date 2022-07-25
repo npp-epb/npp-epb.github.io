@@ -774,11 +774,12 @@ a:active {
 
     .licenses {
         width: unset;
+        gap: 10px;
     }
 
     .licenses>div {
-        width: 40vw;
-        padding: 3px;
+        width: 150px;
+        padding: 10px;
         font-size: 10pt;
     }
 

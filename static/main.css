@@ -822,13 +822,13 @@ a:active {
     }
 
     .solution-block-title {
-        font-size: 10pt;
+        font-size: 12pt;
     }
 
     .solution-block-description {
         width: 100%;
         margin-top: 5px;
-        font-size: 9pt;
+        font-size: 10pt;
     }
 
     .solution-block-links {

@@ -22,7 +22,7 @@
                 <div id="hamburger"><span></span><span></span><span></span><span></span></div>
             </label>
             <div class="navbar-links">
-                <div><a id="solutions-dropdown" class="dropdown">
+                <div><div id="solutions-dropdown" class="dropdown">
                         <label for="navbar-solutions-checkbox">
                             <span class="toggle">Решения</span>
                         </label>
@@ -30,14 +30,13 @@
                             <div class="dropdown-content">
                                 {% for title, description in solutions %}
                                 <div class="dropdown-content-block">
-                                    <div class="dropdown-content-heading"><span class="dropdown-content-heading-text"
-                                            onclick="location.pathname='/solutions'">{{ title }}</span></div>
+                                    <div class="dropdown-content-heading"><a href="/solutions">{{ title }}</a></div>
                                     <div class="dropdown-content-block-content">{{ description }}</div>
                                 </div>
                                 {% endfor %}
                             </div>
                         </div>
-                    </a></div>
+                    </div></div>
                 <div><a href="/products" onclick="follow_navbar_anchor();">Продукция</a></div>
                 <div><a href="/#licenses" onclick="follow_navbar_anchor();">Лицензии</a></div>
                 <div><a href="/#partners" onclick="follow_navbar_anchor();">Партнеры</a></div>

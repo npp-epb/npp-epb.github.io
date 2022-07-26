@@ -19,7 +19,7 @@ ul {
 
 .navbar-links a,
 .footer-content .years a {
-    transition: .15s ease;
+    transition: .3s ease;
 }
 
 .navbar-links a:hover,
@@ -494,6 +494,8 @@ a:active {
     position: relative;
     font-size: 18px;
     white-space: nowrap;
+    cursor: pointer;
+    transition: .3s ease;
 }
 
 .dropdown .toggle:after {
@@ -506,6 +508,10 @@ a:active {
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
     transition: .3s;
+}
+
+.dropdown .toggle:hover {
+    color: #adb5bd;
 }
 
 .dropdown-content-wrapper {
@@ -544,15 +550,6 @@ a:active {
     font-size: 16pt;
     font-weight: 600;
     text-align: left;
-}
-
-.dropdown-content-heading-text {
-    cursor: pointer;
-    transition: .3s ease;
-}
-
-.dropdown-content-heading-text:hover {
-    color: rgb(125, 125, 125);
 }
 
 .dropdown-content-block-content {
@@ -713,7 +710,7 @@ a:active {
         transition: max-height 0.25s;
     }
 
-    #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper .dropdown-content-heading-text {
+    #expand-navbar-checkbox:checked~.navbar-section .navbar .navbar-links .dropdown .dropdown-content-wrapper .dropdown-content-heading {
         font-size: 14pt;
         font-weight: normal;
     }

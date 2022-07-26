@@ -13,7 +13,7 @@ def minify(css_path: str, min_css_path: str) -> None:
             f.write(min_css)
 
 minify('static/main.css', 'static/main.min.css')
-minify('static/legal.css', 'static/legal.min.css')
+minify('static/fixed_footer.css', 'static/fixed_footer.min.css')
 
 # Evaluate Template
 from src.template_vars import *
@@ -27,10 +27,12 @@ def build_page(name: str) -> None:
         f.write(page)
 
 main_css = 'static/main.min.css'
-legal_css = 'static/legal.min.css'
+fixed_footer_css = 'static/fixed_footer.min.css'
 
 env = Environment(loader=FileSystemLoader("./templates"), trim_blocks=True, lstrip_blocks=True)
 
 build_page("index")
 build_page("solutions")
 build_page("legal")
+build_page("about")
+build_page("products")

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="static/i/favicon.ico">
+    <link rel="stylesheet" href="static/main.min.css">
+<link rel="stylesheet" href="static/fixed_footer.min.css">
+    <title>Продукция
+</title>
+</head>
+
+<body>
+    <input id="expand-navbar-checkbox" type="checkbox" />
+    <input id="navbar-solutions-checkbox" type="checkbox" />
+    <section class="navbar-section">
+        <div class="navbar">
+            <div class="epb-logo"><a href="/"><img class="epb-logo-img" src="static/i/epb-logo.jpg" /></a></div>
+            <label for="expand-navbar-checkbox" class="expand-navbar-label"
+                onclick="this.firstElementChild.classList.toggle('open');">
+                <div id="hamburger"><span></span><span></span><span></span><span></span></div>
+            </label>
+            <div class="navbar-links">
+                <div><a id="solutions-dropdown" class="dropdown">
+                        <label for="navbar-solutions-checkbox">
+                            <span class="toggle">Решения</span>
+                        </label>
+                        <div class="dropdown-content-wrapper">
+                            <div class="dropdown-content">
+                                <div class="dropdown-content-block">
+                                    <div class="dropdown-content-heading"><span class="dropdown-content-heading-text"
+                                            onclick="location.pathname='/solutions'">Аудит информационной безопасности</span></div>
+                                    <div class="dropdown-content-block-content">Результатом аудита является заключение о степени соответствия компании/организации критериям аудита, а также рекомендации по совершенствованию ИТ-инфраструктуры, защиты информации, процессов обеспечения и управления ИБ и документационного обеспечения заказчика.</div>
+                                </div>
+                                <div class="dropdown-content-block">
+                                    <div class="dropdown-content-heading"><span class="dropdown-content-heading-text"
+                                            onclick="location.pathname='/solutions'">Разработка проектов и регламентирующих документов</span></div>
+                                    <div class="dropdown-content-block-content">В результате оказанных услуг по проектированию СЗИ ИСПДн будет разработан и представлен Заказчику Проект создания СЗИ информационной системы в защищенном исполнении.</div>
+                                </div>
+                                <div class="dropdown-content-block">
+                                    <div class="dropdown-content-heading"><span class="dropdown-content-heading-text"
+                                            onclick="location.pathname='/solutions'">Поставка средств защиты информации</span></div>
+                                    <div class="dropdown-content-block-content">Поставка программно-аппаратных и программных средств защиты информации, обеспечивающих безопасность автоматизированных информационных систем.</div>
+                                </div>
+                                <div class="dropdown-content-block">
+                                    <div class="dropdown-content-heading"><span class="dropdown-content-heading-text"
+                                            onclick="location.pathname='/solutions'">Установка и настройка средств защиты информации</span></div>
+                                    <div class="dropdown-content-block-content">Установка и настройка программно-аппаратных и программных средств защиты, предназначенных для обеспечения безопасности информации, обрабатываемой в информационной системе.</div>
+                                </div>
+                                <div class="dropdown-content-block">
+                                    <div class="dropdown-content-heading"><span class="dropdown-content-heading-text"
+                                            onclick="location.pathname='/solutions'">Аттестация информационной системы</span></div>
+                                    <div class="dropdown-content-block-content">В рамках, разработанных ФСТЭК «Системы сертификации средств защиты информации по требованиям безопасности информации» и «Специальных требований и рекомендаций по технической защите конфиденциальной информации» (СТР-К) проводится аттестация объектов информатизации.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                <div><a href="/products" onclick="follow_navbar_anchor();">Продукция</a></div>
+                <div><a href="/#licenses" onclick="follow_navbar_anchor();">Лицензии</a></div>
+                <div><a href="/#partners" onclick="follow_navbar_anchor();">Партнеры</a></div>
+                <div><a href="/#contact" onclick="follow_navbar_anchor();">Контакты</a></div>
+            </div>
+        </div>
+    </section>
+
+<div class="main-heading">
+    Продукция
+</div>
+
+    <section class="footer-section">
+        <div class="footer-content">
+            <div class="years">
+                &#169; 2013–<span id="footer-year">2022</span> ЗАО НПП "ЭПБ"<span style="color: #6c757d"><a
+                        href="/legal">
+                        Правовая
+                        информация</a></span>
+            </div>
+            <div class="contact text-align-right">
+                +7 (495) 780-35-98
+                <br>
+                <a href="mailto:info@npp-epb.ru">info@npp-epb.ru</a>
+            </div>
+        </div>
+    </section>
+    <script>
+        var base_resize_timer = 0;
+        function follow_navbar_anchor() {
+            const expand_navbar_checkbox = document.getElementById('expand-navbar-checkbox');
+            const hamburger = document.getElementById('hamburger');
+            expand_navbar_checkbox.checked = false;
+            hamburger.classList.remove('open');
+        }
+        function base_on_load() {
+            const footer_year = document.getElementById('footer-year');
+            footer_year.innerText = new Date().getFullYear();
+        }
+        function base_on_scroll() {
+            const navbar_solutions_checkbox = document.getElementById('navbar-solutions-checkbox');
+            navbar_solutions_checkbox.checked = false;
+        }
+        window.addEventListener('load', base_on_load);
+        window.addEventListener('scroll', base_on_scroll);
+    </script>
+</body>
+
+</html>

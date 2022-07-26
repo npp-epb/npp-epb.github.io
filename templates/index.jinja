@@ -31,25 +31,6 @@
             </div>
         </div>
     </section>
-    <input id="expand-clients-checkbox" type="checkbox" />
-    <section class="clients-section">
-        <div class="clients">
-            {% for filename, description, link in clients %}
-                <div>
-                    <a target="_blank" href="{{ link }}" title="{{ description }}">
-                        <div class="client-img">
-                            <img src="static/i/client/{{ filename }}" />
-                        </div>
-                    </a>
-                </div>
-            {% endfor %}
-            </div>
-    </section>
-
-    <label class="expand-clients-label" for="expand-clients-checkbox">
-        <div class="triangle-down"></div>
-    </label>
-
     <section class="solutions-blocks-section">
         <div class="main-heading">
             Решения

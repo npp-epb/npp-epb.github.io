@@ -16,8 +16,7 @@ ul {
 }
 
 .navbar-links a,
-.footer-content .years a,
-.expand-clients-label .triangle-down {
+.footer-content .years a {
     transition: .15s ease;
 }
 
@@ -33,6 +32,7 @@ ul {
 .solutions-section {
     background-color: #ffffff;
     margin-top: 50px;
+    padding-bottom: 50px;
 }
 
 .solutions-blocks-section {
@@ -300,14 +300,11 @@ a:active {
 
 .clients {
     width: 75vw;
-    max-height: 100px;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, 100px);
     justify-content: space-around;
     gap: 75px;
-    overflow: hidden;
-    animation: 0.8s alternate slideY;
 }
 
 .clients>div {
@@ -336,42 +333,8 @@ a:active {
     margin: auto;
 }
 
-.expand-clients-label {
-    display: block;
-    margin: 20px 0;
-    text-align: center;
-}
-
-#expand-clients-checkbox {
-    display: none;
-}
-
 .clients-section {
-    margin-top: 50px;
-}
-
-#expand-clients-checkbox:checked~.clients-section .clients {
-    max-height: unset;
-}
-
-#expand-clients-checkbox:checked~.expand-clients-label .triangle-down {
-    transform: rotate(-45deg);
-    margin: 10px 0;
-}
-
-.triangle-down {
-    position: relative;
-    top: -5px;
-    content: "";
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-right: 2px solid #bebebe;
-    border-top: 2px solid #bebebe;
-    transform: rotate(135deg);
-    margin-right: 0.5em;
-    margin-left: 1.0em;
-    cursor: pointer;
+    padding-bottom: 50px;
 }
 
 .partners {
@@ -587,18 +550,6 @@ a:active {
     cursor: default;
 }
 
-@keyframes slideY {
-    from {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 @keyframes slideX {
     from {
         opacity: 0;
@@ -636,6 +587,7 @@ a:active {
 
     .solutions-section {
         margin-top: 20px;
+        padding-bottom: 20px;
     }
 
     .solution-blocks {

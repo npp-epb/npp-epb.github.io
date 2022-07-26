@@ -17,7 +17,7 @@ app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
 
 main_css = 'static/main.css'
-legal_css = 'static/legal.css'
+fixed_footer_css = 'static/fixed_footer.css'
 __file__dirname = os.path.dirname(os.path.realpath(__file__))
 
 def requires_password(route):
@@ -29,23 +29,23 @@ def requires_password(route):
     return wrapper
 
 
+def define_empty_route(route):
+    exec(f"""\
+@app.route('/{route if route != 'index' else ''}')
+def {route}_page():
+    return render_template('{route}.jinja', **globals())
+""")
+
+
 def is_safe_path(path: str) -> bool:
     return __file__dirname == os.path.commonprefix((__file__dirname, os.path.abspath(path)))
 
 
-@app.route('/')
-def index():
-    return render_template('index.jinja', **globals())
-
-
-@app.route('/legal')
-def legal():
-    return render_template('legal.jinja', **globals())
-
-
-@app.route('/solutions')
-def solutions_():
-    return render_template('solutions.jinja', **globals())
+define_empty_route('index')
+define_empty_route('legal')
+define_empty_route('solutions')
+define_empty_route('about')
+define_empty_route('products')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -106,7 +106,7 @@ def edit_file(subpath: str):
 if __name__ == '__main__':
     assert(os.environ.get('password', None) is not None)
     main_css = 'static/main.min.css'
-    legal_css = 'static/legal.min.css'
+    fixed_footer = 'static/fixed_footer.min.css'
     wsgi = WSGIServer(('0.0.0.0', int(os.environ.get('PORT'))), app)
     wsgi.serve_forever()
 else:

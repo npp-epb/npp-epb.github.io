@@ -38,7 +38,7 @@
                             </div>
                         </div>
                     </a></div>
-                <div><a href="/#clients" onclick="toggle_clients(); follow_navbar_anchor();">Клиенты</a></div>
+                <div><a href="/products" onclick="follow_navbar_anchor();">Продукция</a></div>
                 <div><a href="/#licenses" onclick="follow_navbar_anchor();">Лицензии</a></div>
                 <div><a href="/#partners" onclick="follow_navbar_anchor();">Партнеры</a></div>
                 <div><a href="/#contact" onclick="follow_navbar_anchor();">Контакты</a></div>
@@ -68,10 +68,6 @@
             const hamburger = document.getElementById('hamburger');
             expand_navbar_checkbox.checked = false;
             hamburger.classList.remove('open');
-        }
-        function toggle_clients() {
-            const checkbox = document.getElementById('expand-clients-checkbox');
-            checkbox.checked = !checkbox.checked;
         }
         function base_on_load() {
             const footer_year = document.getElementById('footer-year');

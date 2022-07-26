@@ -75,10 +75,19 @@ ul {
 }
 
 .legal-section {
+    background-color: #fffffff6;
+    padding-bottom: 100vh;
+}
+
+.solution-details-section {
+    background-color: #fffffff6;
+    padding-bottom: 50px;
+}
+
+.legal-section-text, .solution-details-section-text {
     width: 70vw;
     margin: auto;
     text-align: justify;
-    padding-bottom: 150px;
 }
 
 a,

@@ -617,7 +617,7 @@ a:active {
         padding-top: 0;
     }
 
-    .legal-section-text {
+    .legal-section-text, .solution-details-section-text {
         width: 90vw;
     }
 

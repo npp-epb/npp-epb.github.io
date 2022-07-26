@@ -64,6 +64,16 @@ ul {
     padding: 20px 0 20px 0;
 }
 
+.clients-section {
+    background-color: #ffffff;
+    padding-bottom: 50px;
+}
+
+.products-section {
+    background-color: #fffffff6;
+    padding-bottom: 100vh;
+}
+
 .legal-section {
     width: 70vw;
     margin: auto;
@@ -335,10 +345,6 @@ a:active {
     left: 0;
     right: 0;
     margin: auto;
-}
-
-.clients-section {
-    padding-bottom: 50px;
 }
 
 .partners {

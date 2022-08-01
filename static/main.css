@@ -399,7 +399,7 @@ a:active {
     width: 500px;
     height: 440px;
     padding: 30px;
-    background: rgba(222, 226, 230, 0.9);
+    background: rgba(222, 226, 230, 0.8);
     z-index: 1;
     text-align: right;
     font-size: 15pt;
@@ -425,7 +425,7 @@ a:active {
 }
 
 .change-yandex-maps:hover {
-    color: rgb(170, 170, 170);
+    color: #6e6e6e;
 }
 
 .footer-content {
